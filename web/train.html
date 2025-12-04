@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự Đoán Bệnh Tim - Cá Nhân</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #c0392b; --primary-light: #e74c3c; --secondary: #fa709a; --success: #27ae60; --danger: #e74c3c; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background: linear-gradient(135deg, #fef5f5 0%, #ffe8e8 100%); min-height: 100vh; padding: 20px; }
+        
+        /* Navbar */
+        nav { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); padding: 18px 80px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 12px 40px rgba(0,0,0,0.25); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(5px); }
+        .logo { display: flex; align-items: center; gap: 16px; color: white; font-size: 1.7em; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.3s ease; }
+        .logo:hover { transform: scale(1.05); filter: brightness(1.1); }
+        .logo-icon { width: 55px; height: 55px; background: rgba(255, 255, 255, 0.2); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; color: white; box-shadow: 0 6px 16px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.2); border: 2px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; }
+        .logo:hover .logo-icon { background: rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.5); transform: rotate(5deg); }
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { color: white; text-decoration: none; font-size: 1.05em; font-weight: 600; padding: 10px 18px; border-radius: 10px; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.15); transition: all 0.3s ease; }
+        .nav-links a:hover { background: rgba(255,255,255,0.18); transform: translateY(-3px); border-color: rgba(255,255,255,0.3); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 40px; }
+        h1 { color: var(--primary); font-size: 2.8em; margin-bottom: 15px; }
+        .subtitle { color: #666; font-size: 1.1em; }
+        
+        .form-section { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 30px; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+        
+        .form-group { display: flex; flex-direction: column; }
+        label { font-weight: 700; color: #333; margin-bottom: 8px; font-size: 0.95em; }
+        input, select { padding: 12px 15px; border: 2px solid #eee; border-radius: 10px; font-size: 1em; transition: all 0.3s ease; }
+        input:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1); }
+        
+        .suggestion-list { position: absolute; background: white; border: 2px solid var(--primary); border-radius: 10px; list-style: none; max-height: 200px; overflow-y: auto; width: 100%; z-index: 10; box-shadow: 0 8px 24px rgba(0,0,0,0.15); display: none; top: 100%; }
+        .suggestion-list.show { display: block; }
+        .suggestion-list li { padding: 10px 15px; cursor: pointer; transition: all 0.2s ease; border-bottom: 1px solid #f0f0f0; }
+        .suggestion-list li:hover { background: #f5f5f5; padding-left: 20px; }
+        .suggestion-list li:last-child { border-bottom: none; }
+        
+        .form-group { position: relative; }
+        
+        .buttons { display: flex; gap: 15px; margin-top: 30px; }
+        button { padding: 15px 40px; border: none; border-radius: 12px; font-size: 1.05em; font-weight: 700; cursor: pointer; transition: all 0.3s ease; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(192, 57, 43, 0.3); }
+        .btn-primary:active { transform: translateY(-1px); }
+        .btn-secondary { background: #f0f0f0; color: #333; }
+        .btn-secondary:hover { background: #e0e0e0; }
+        
+        .result { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); display: none; border-left: 6px solid var(--danger); }
+        .result.show { display: block; animation: slideIn 0.4s ease; }
+        
+        .result-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .result-icon { font-size: 2.5em; }
+        .result-title { font-size: 1.8em; color: var(--primary); font-weight: 800; }
+        
+        .result-content { background: #f5f5f5; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e0e0e0; }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { font-weight: 700; color: #333; }
+        .result-value { color: var(--primary); font-weight: 700; font-size: 1.1em; }
+        
+        .risk-level { display: flex; align-items: center; gap: 15px; padding: 20px; border-radius: 12px; margin: 20px 0; }
+        .risk-low { background: rgba(39, 174, 96, 0.1); border-left: 5px solid #27ae60; }
+        .risk-medium { background: rgba(243, 156, 18, 0.1); border-left: 5px solid #f39c12; }
+        .risk-high { background: rgba(231, 76, 60, 0.1); border-left: 5px solid #e74c3c; }
+        
+        .loading { display: none; text-align: center; }
+        .spinner { display: inline-block; width: 40px; height: 40px; border: 4px solid #f0f0f0; border-top: 4px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .warning { background: #fff3cd; border-left: 4px solid #f39c12; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; color: #856404; }
+        .success { background: #d4edda; border-left: 4px solid #27ae60; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; color: #155724; }
+        
+        @media (max-width: 768px) {
+            nav { padding: 12px 20px; }
+            .container { padding: 20px 15px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .buttons { flex-direction: column; }
+            button { width: 100%; }
+            h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="menu.html" class="logo">
+            <div class="logo-icon">❤️</div>
+            <span>Heart Care</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="menu.html">🏠 Trang Chủ</a></li>
+            <li><a href="image_predict.html">🖼️ Hình Ảnh</a></li>
+            <li><a href="batch_check.html">📊 Kiểm Tra</a></li>
+            <li><a href="patients.html">👥 Bệnh Nhân</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>🔮 Dự Đoán Bệnh Tim Cá Nhân</h1>
+            <p class="subtitle">Nhập thông tin bệnh nhân để dự đoán nguy cơ bệnh tim. Hệ thống sẽ gợi ý dữ liệu từ các bệnh nhân trong cơ sở dữ liệu.</p>
+        </header>
+
+        <div class="warning">
+            <strong>💡 Mẹo:</strong> Nhấn vào các trường input để xem gợi ý dữ liệu từ cơ sở dữ liệu hiện có (50,000 bệnh nhân).
+        </div>
+
+        <form class="form-section" id="predictionForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age">Tuổi (Age)</label>
+                    <input type="number" id="age" name="age" min="1" max="120" placeholder="Nhập tuổi..." required>
+                    <ul class="suggestion-list" id="ageSuggestions"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Giới Tính (Gender)</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">-- Chọn giới tính --</option>
+                        <option value="Male">Nam (Male)</option>
+                        <option value="Female">Nữ (Female)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Cân Nặng (kg)</label>
+                    <input type="number" id="weight" name="weight" min="20" max="300" step="0.1" placeholder="Nhập cân nặng..." required>
+                    <ul class="suggestion-list" id="weightSuggestions"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="height">Chiều Cao (cm)</label>
+                    <input type="number" id="height" name="height" min="100" max="250" placeholder="Nhập chiều cao..." required>
+                    <ul class="suggestion-list" id="heightSuggestions"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmi">BMI</label>
+                    <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" placeholder="Nhập BMI..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="smoking">Hút Thuốc (Smoking)</label>
+                    <select id="smoking" name="smoking" required>
+                        <option value="">-- Chọn --</option>
+                        <option value="Never">Không bao giờ (Never)</option>
+                        <option value="Former">Từng hút (Former)</option>
+                        <option value="Current">Đang hút (Current)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="systolic">Huyết Áp Tâm Thu (Systolic BP)</label>
+                    <input type="number" id="systolic" name="systolic" min="50" max="250" placeholder="Nhập Systolic..." required>
+                    <ul class="suggestion-list" id="systolicSuggestions"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="diastolic">Huyết Áp Tâm Trương (Diastolic BP)</label>
+                    <input type="number" id="diastolic" name="diastolic" min="30" max="150" placeholder="Nhập Diastolic..." required>
+                    <ul class="suggestion-list" id="diastolicSuggestions"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="heart_rate">Nhịp Tim (Heart Rate)</label>
+                    <input type="number" id="heart_rate" name="heart_rate" min="30" max="200" placeholder="Nhập nhịp tim..." required>
+                    <ul class="suggestion-list" id="heartRateSuggestions"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="cholesterol">Cholesterol Toàn Phần (mg/dL)</label>
+                    <input type="number" id="cholesterol" name="cholesterol" min="100" max="400" placeholder="Nhập cholesterol..." required>
+                    <ul class="suggestion-list" id="cholesterolSuggestions"></ul>
+                </div>
+
+                <div class="form-group">
+                    <label for="hypertension">Huyết Áp Cao (Hypertension)</label>
+                    <select id="hypertension" name="hypertension" required>
+                        <option value="">-- Chọn --</option>
+                        <option value="0">Không (No)</option>
+                        <option value="1">Có (Yes)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="diabetes">Tiểu Đường (Diabetes)</label>
+                    <select id="diabetes" name="diabetes" required>
+                        <option value="">-- Chọn --</option>
+                        <option value="0">Không (No)</option>
+                        <option value="1">Có (Yes)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="btn-primary">🚀 Dự Đoán</button>
+                <button type="reset" class="btn-secondary">🔄 Xoá</button>
+            </div>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 15px; color: #666;">Đang xử lý dự đoán...</p>
+        </div>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // CSV data suggestions
+        let csvData = [];
+        let ageValues = [];
+        let weightValues = [];
+        let heightValues = [];
+        let systolicValues = [];
+        let diastolicValues = [];
+        let heartRateValues = [];
+        let cholesterolValues = [];
+
+        async function loadCSVData() {
+            try {
+                const response = await fetch('../data/synthetic_heart_disease_dataset.csv');
+                const csvText = await response.text();
+                parseCSVData(csvText);
+            } catch (error) {
+                console.error('Lỗi tải CSV:', error);
+            }
+        }
+
+        function parseCSVData(csvText) {
+            const lines = csvText.trim().split('\n');
+            
+            // Detect delimiter: tab, semicolon, or comma
+            const firstLine = lines[0];
+            let delimiter = '\t'; // Default to tab
+            if (firstLine.includes('\t')) {
+                delimiter = '\t';
+            } else if (firstLine.includes(';')) {
+                delimiter = ';';
+            } else if (firstLine.includes(',')) {
+                delimiter = ',';
+            }
+            
+            for (let i = 1; i < Math.min(lines.length, 5001); i++) { // Lấy 5000 mẫu
+                if (!lines[i].trim()) continue; // Skip empty lines
+                const values = lines[i].split(delimiter).map(v => v.trim());
+                if (values.length !== 21) continue;
+
+                const age = parseInt(values[0]);
+                const weight = parseFloat(values[2]);
+                const height = parseFloat(values[3]);
+                const systolic = parseInt(values[15]);
+                const diastolic = parseInt(values[16]);
+                const heartRate = parseInt(values[17]);
+                const cholesterol = parseInt(values[19]);
+
+                if (!isNaN(age)) ageValues.push(age);
+                if (!isNaN(weight)) weightValues.push(weight);
+                if (!isNaN(height)) heightValues.push(height);
+                if (!isNaN(systolic)) systolicValues.push(systolic);
+                if (!isNaN(diastolic)) diastolicValues.push(diastolic);
+                if (!isNaN(heartRate)) heartRateValues.push(heartRate);
+                if (!isNaN(cholesterol)) cholesterolValues.push(cholesterol);
+            }
+
+            // Loại bỏ duplicates và sắp xếp
+            ageValues = [...new Set(ageValues)].sort((a, b) => a - b);
+            weightValues = [...new Set(weightValues)].sort((a, b) => a - b);
+            heightValues = [...new Set(heightValues)].sort((a, b) => a - b);
+            systolicValues = [...new Set(systolicValues)].sort((a, b) => a - b);
+            diastolicValues = [...new Set(diastolicValues)].sort((a, b) => a - b);
+            heartRateValues = [...new Set(heartRateValues)].sort((a, b) => a - b);
+            cholesterolValues = [...new Set(cholesterolValues)].sort((a, b) => a - b);
+        }
+
+        function showSuggestions(inputId, suggestionListId, dataArray) {
+            const input = document.getElementById(inputId);
+            const suggestionList = document.getElementById(suggestionListId);
+            
+            input.addEventListener('input', () => {
+                const value = input.value;
+                
+                if (!value) {
+                    suggestionList.classList.remove('show');
+                    return;
+                }
+
+                const filtered = dataArray.filter(v => 
+                    v.toString().startsWith(value)
+                ).slice(0, 10);
+
+                if (filtered.length > 0) {
+                    suggestionList.innerHTML = filtered.map(v => 
+                        `<li onclick="document.getElementById('${inputId}').value = '${v}'; document.getElementById('${suggestionListId}').classList.remove('show');">${v}</li>`
+                    ).join('');
+                    suggestionList.classList.add('show');
+                } else {
+                    suggestionList.classList.remove('show');
+                }
+            });
+
+            input.addEventListener('blur', () => {
+                setTimeout(() => suggestionList.classList.remove('show'), 200);
+            });
+        }
+
+        // Initialize suggestions
+        window.addEventListener('load', () => {
+            loadCSVData();
+            showSuggestions('age', 'ageSuggestions', ageValues);
+            showSuggestions('weight', 'weightSuggestions', weightValues);
+            showSuggestions('height', 'heightSuggestions', heightValues);
+            showSuggestions('systolic', 'systolicSuggestions', systolicValues);
+            showSuggestions('diastolic', 'diastolicSuggestions', diastolicValues);
+            showSuggestions('heart_rate', 'heartRateSuggestions', heartRateValues);
+            showSuggestions('cholesterol', 'cholesterolSuggestions', cholesterolValues);
+        });
+
+        // Form submission
+        document.getElementById('predictionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                age: parseInt(document.getElementById('age').value),
+                gender: document.getElementById('gender').value,
+                weight: parseFloat(document.getElementById('weight').value),
+                height: parseFloat(document.getElementById('height').value),
+                bmi: parseFloat(document.getElementById('bmi').value),
+                smoking: document.getElementById('smoking').value,
+                systolic_bp: parseInt(document.getElementById('systolic').value),
+                diastolic_bp: parseInt(document.getElementById('diastolic').value),
+                heart_rate: parseInt(document.getElementById('heart_rate').value),
+                cholesterol: parseInt(document.getElementById('cholesterol').value),
+                hypertension: parseInt(document.getElementById('hypertension').value),
+                diabetes: parseInt(document.getElementById('diabetes').value),
+            };
+
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+            
+            loading.style.display = 'block';
+            result.classList.remove('show');
+
+            try {
+                const response = await fetch('http://127.0.0.1:8080/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                displayResult(data, formData);
+            } catch (error) {
+                result.innerHTML = `<div class="warning"><strong>❌ Lỗi:</strong> ${error.message}</div>`;
+                result.classList.add('show');
+            } finally {
+                loading.style.display = 'none';
+            }
+        });
+
+        function displayResult(data, formData) {
+            const result = document.getElementById('result');
+            const riskScore = data.risk_probability || 0;
+            const riskLabel = data.label || 'Unknown';
+            const riskLevel = riskScore < 0.3 ? 'low' : riskScore < 0.7 ? 'medium' : 'high';
+            const riskText = riskLevel === 'low' ? '⬇️ Nguy Cơ Thấp' : riskLevel === 'medium' ? '➡️ Nguy Cơ Trung Bình' : '⬆️ Nguy Cơ Cao';
+            
+            result.innerHTML = `
+                <div class="result-header">
+                    <div class="result-icon">${riskLevel === 'low' ? '✅' : riskLevel === 'medium' ? '⚠️' : '🚨'}</div>
+                    <div>
+                        <div class="result-title">Kết Quả Dự Đoán</div>
+                    </div>
+                </div>
+
+                <div class="risk-level risk-${riskLevel}">
+                    <div>
+                        <strong>${riskText}</strong><br>
+                        <p>Xác suất: <strong>${(riskScore * 100).toFixed(1)}%</strong></p>
+                    </div>
+                </div>
+
+                <div class="result-content">
+                    <div class="result-row">
+                        <span class="result-label">Tuổi</span>
+                        <span class="result-value">${formData.age} tuổi</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Giới Tính</span>
+                        <span class="result-value">${formData.gender === 'Male' ? 'Nam' : 'Nữ'}</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">BMI</span>
+                        <span class="result-value">${formData.bmi}</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Huyết Áp</span>
+                        <span class="result-value">${formData.systolic_bp}/${formData.diastolic_bp}</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Nhịp Tim</span>
+                        <span class="result-value">${formData.heart_rate} bpm</span>
+                    </div>
+                </div>
+
+                ${riskLevel === 'high' ? `
+                    <div class="warning">
+                        <strong>⚠️ Lưu Ý:</strong> Mức độ nguy cơ cao. Vui lòng tham khảo ý kiến bác sĩ và thực hiện các kiểm tra sức khỏe định kỳ.
+                    </div>
+                ` : ''}
+
+                ${riskLevel === 'low' ? `
+                    <div class="success">
+                        <strong>✅ Tốt:</strong> Mức độ nguy cơ thấp. Tiếp tục duy trì lối sống lành mạnh.
+                    </div>
+                ` : ''}
+            `;
+            
+            result.classList.add('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>✅ Hoàn Thành - Liên Kết Dữ Liệu</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        header { background: linear-gradient(135deg, #27ae60 0%, #16a085 100%); color: white; padding: 50px 20px; text-align: center; }
+        h1 { font-size: 3em; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2em; opacity: 0.95; }
+        .content { padding: 40px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+        .feature-card { background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #27ae60; }
+        .feature-card h3 { color: #27ae60; margin-bottom: 10px; }
+        .feature-card p { color: #666; font-size: 0.95em; line-height: 1.6; }
+        .cta { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin: 30px 0; text-align: center; }
+        .cta a { color: white; text-decoration: none; font-size: 1.2em; font-weight: bold; display: inline-block; padding: 15px 40px; background: rgba(255,255,255,0.2); border-radius: 8px; transition: all 0.3s; margin: 10px; }
+        .cta a:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
+        .flow-diagram { background: #f0f4f8; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .flow-step { display: flex; align-items: center; margin: 15px 0; }
+        .flow-num { background: #27ae60; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 15px; flex-shrink: 0; }
+        .flow-text { flex: 1; }
+        .checklist { background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .checklist li { margin: 10px 0; display: flex; align-items: center; }
+        .check { color: #27ae60; font-weight: bold; margin-right: 10px; }
+        code { background: #f0f4f8; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        .link-section { margin: 30px 0; padding: 20px; background: #f9f9f9; border-radius: 10px; }
+        .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .link-btn { display: block; padding: 15px; background: white; border: 2px solid #ddd; border-radius: 8px; text-align: center; text-decoration: none; color: #333; transition: all 0.3s; font-weight: 600; }
+        .link-btn:hover { border-color: #667eea; color: #667eea; transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+        .badge { display: inline-block; background: #27ae60; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.85em; margin-right: 5px; margin-bottom: 5px; }
+        .warning { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✅ Hoàn Thành!</h1>
+            <p class="subtitle">Liên kết dữ liệu CSV → localStorage → Patients & History</p>
+        </header>
+
+        <div class="content">
+            <!-- Luồng Dữ Liệu -->
+            <div class="flow-diagram">
+                <h2 style="color: #333; margin-bottom: 20px;">📊 Luồng Dữ Liệu Hoàn Chỉnh</h2>
+                
+                <div class="flow-step">
+                    <div class="flow-num">1</div>
+                    <div class="flow-text">
+                        <strong>Người dùng upload CSV</strong><br>
+                        <span style="color: #666;">Trang: batch_check.html</span>
+                    </div>
+                </div>
+
+                <div style="text-align: center; color: #999; margin: -5px 0 -5px 20px;">↓</div>
+
+                <div class="flow-step">
+                    <div class="flow-num">2</div>
+                    <div class="flow-text">
+                        <strong>Gửi đến API dự đoán</strong><br>
+                        <span style="color: #666;">Endpoint: POST /predict/batch</span>
+                    </div>
+                </div>
+
+                <div style="text-align: center; color: #999; margin: -5px 0 -5px 20px;">↓</div>
+
+                <div class="flow-step">
+                    <div class="flow-num">3</div>
+                    <div class="flow-text">
+                        <strong>Nhận kết quả + Transform dữ liệu</strong><br>
+                        <span style="color: #666;">Chuyển từ lowercase → PascalCase</span>
+                    </div>
+                </div>
+
+                <div style="text-align: center; color: #999; margin: -5px 0 -5px 20px;">↓</div>
+
+                <div class="flow-step">
+                    <div class="flow-num">4</div>
+                    <div class="flow-text">
+                        <strong>💾 Lưu vào localStorage (2 nơi)</strong><br>
+                        <span style="color: #666;">
+                            • patient_history (batch records)<br>
+                            • all_patients (individual patients)
+                        </span>
+                    </div>
+                </div>
+
+                <div style="text-align: center; color: #999; margin: -5px 0 -5px 20px;">↓</div>
+
+                <div class="flow-step">
+                    <div class="flow-num">5</div>
+                    <div class="flow-text">
+                        <strong>📋 Auto-load trên 2 trang</strong><br>
+                        <span style="color: #666;">
+                            • patients.html (danh sách bệnh nhân)<br>
+                            • history.html (lịch sử batch)
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <h2 style="color: #333; margin: 40px 0 20px;">✨ Chức Năng Đã Thêm</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📊 batch_check.html</h3>
+                    <p>
+                        ✅ Upload CSV<br>
+                        ✅ Dự đoán hàng loạt<br>
+                        ✅ <strong>Tự động lưu</strong> vào localStorage<br>
+                        ✅ 🔄 Tải lại<br>
+                        ✅ 🗑️ Xóa dữ liệu
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>👥 patients.html</h3>
+                    <p>
+                        ✅ <strong>Auto-load</strong> danh sách bệnh nhân<br>
+                        ✅ Tìm kiếm<br>
+                        ✅ Xem chi tiết<br>
+                        ✅ Xóa bệnh nhân<br>
+                        ✅ Xuất CSV
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📜 history.html</h3>
+                    <p>
+                        ✅ <strong>Auto-load</strong> lịch sử batch<br>
+                        ✅ Xem chi tiết batch<br>
+                        ✅ Xóa batch<br>
+                        ✅ Xuất CSV/JSON<br>
+                        ✅ Thống kê
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cách Test -->
+            <h2 style="color: #333; margin: 40px 0 20px;">🧪 Cách Test</h2>
+            <div class="checklist">
+                <h3>Cách 1: Trang Test (⭐ Khuyến Nghị)</h3>
+                <ul>
+                    <li><span class="check">✓</span> Mở: <a href="/static/test.html" target="_blank">test.html</a> - Test & Debug Suite</li>
+                    <li><span class="check">✓</span> Chọn tab "🚀 Full Flow" → Nhấn "🚀 Giả Lập Upload"</li>
+                    <li><span class="check">✓</span> Xem kết quả ở tab "📊 Status Check"</li>
+                    <li><span class="check">✓</span> Mở 2 tab: patients.html & history.html</li>
+                </ul>
+
+                <h3 style="margin-top: 20px;">Cách 2: Upload CSV Thực Tế</h3>
+                <ul>
+                    <li><span class="check">✓</span> Mở: <a href="/static/batch_check.html" target="_blank">batch_check.html</a></li>
+                    <li><span class="check">✓</span> Upload CSV (hoặc dùng template)</li>
+                    <li><span class="check">✓</span> Mở: <a href="/static/patients.html" target="_blank">patients.html</a></li>
+                    <li><span class="check">✓</span> ✅ Sẽ thấy bệnh nhân vừa upload</li>
+                </ul>
+            </div>
+
+            <!-- Links -->
+            <h2 style="color: #333; margin: 40px 0 20px;">📍 Các Trang Liên Quan</h2>
+            <div class="link-section">
+                <div class="link-grid">
+                    <a href="/static/test.html" class="link-btn" target="_blank">
+                        🧪 Test & Debug Suite
+                        <br><span style="font-size: 0.8em; color: #999;">3 tabs: Flow, Status, Inspector</span>
+                    </a>
+                    <a href="/static/batch_check.html" class="link-btn" target="_blank">
+                        📊 Dự Đoán Hàng Loạt
+                        <br><span style="font-size: 0.8em; color: #999;">Upload CSV</span>
+                    </a>
+                    <a href="/static/patients.html" class="link-btn" target="_blank">
+                        👥 Quản Lý Bệnh Nhân
+                        <br><span style="font-size: 0.8em; color: #999;">Xem danh sách</span>
+                    </a>
+                    <a href="/static/history.html" class="link-btn" target="_blank">
+                        📜 Lịch Sử
+                        <br><span style="font-size: 0.8em; color: #999;">Xem batch</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kỳ Vọng -->
+            <h2 style="color: #333; margin: 40px 0 20px;">✔️ Kỳ Vọng Kết Quả</h2>
+            <div style="background: #e8f5e9; padding: 20px; border-radius: 10px; border-left: 4px solid #27ae60;">
+                <h3 style="color: #27ae60; margin-bottom: 15px;">Sau khi Upload CSV:</h3>
+                <ul class="checklist">
+                    <li><span class="check">✓</span> batch_check.html: Hiển thị kết quả + "✅ Đã lưu X bệnh nhân"</li>
+                    <li><span class="check">✓</span> patients.html: Auto-load & hiển thị danh sách bệnh nhân</li>
+                    <li><span class="check">✓</span> history.html: Auto-load & hiển thị batch vừa tạo</li>
+                    <li><span class="check">✓</span> Console: Logs chi tiết về việc lưu dữ liệu</li>
+                    <li><span class="check">✓</span> DevTools → LocalStorage: Có 2 keys (patient_history + all_patients)</li>
+                </ul>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta">
+                <p>🚀 Bắt đầu test ngay bây giờ!</p>
+                <a href="/static/test.html" target="_blank">👉 Mở Test & Debug Suite</a>
+            </div>
+
+            <!-- Server Status -->
+            <div class="warning">
+                <strong>ℹ️ Server Status:</strong><br>
+                ✅ Running on http://localhost:3000<br>
+                ✅ All files updated and reloaded<br>
+                ✅ Ready to test!
+            </div>
+        </div>
+    </div>
+</body>
+</html>

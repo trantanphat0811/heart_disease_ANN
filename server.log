@@ -1,0 +1,3 @@
+INFO:     Will watch for changes in these directories: ['/Users/trantanphat/Documents/Python/heart_disease']
+ERROR:    [Errno 48] Address already in use
+Starting Uvicorn server for src.app:app on 127.0.0.1:8080 (reload=True)

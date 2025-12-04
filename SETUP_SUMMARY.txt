@@ -1,0 +1,432 @@
+#!/usr/bin/env python3
+"""
+================================================================================
+                   🏥 HỆ THỐNG DỰ ĐOÁN BỆNH TIM BẰNG CNN
+                    Heart Disease Prediction - Quick Summary
+                   
+                          SETUP & COMMAND SUGGESTIONS
+================================================================================
+
+Được tạo bởi: GitHub Copilot
+Ngày: December 2, 2024
+Phiên bản: 1.0 (CNN Deep Learning Edition)
+
+================================================================================
+"""
+
+SETUP_SUMMARY = """
+
+✅ THIẾT LẬP HỆ THỐNG - ĐÃ HOÀN THÀNH
+
+📂 Thư Mục Được Tạo (14 folders):
+   ✓ data/                 - Dữ liệu hình ảnh & CSV
+   ✓ data/train/           - Ảnh huấn luyện
+   ✓ data/train/healthy/   - ECG bình thường (5 ảnh mẫu)
+   ✓ data/train/disease/   - ECG bất thường (5 ảnh mẫu)
+   ✓ data/val/             - Ảnh xác thực
+   ✓ data/test/            - Ảnh test
+   ✓ models/               - Mô hình đã huấn luyện
+   ✓ models/cnn/           - CNN models
+   ✓ logs/                 - Log files
+   ✓ uploads/              - Upload files từ users
+   ✓ uploads/images/       - Tải lên ảnh
+   ✓ uploads/results/      - Kết quả export
+   ✓ web/                  - HTML pages (sẵn có)
+   ✓ src/                  - Backend code (sẵn có)
+
+📦 Dependencies Đã Cài Đặt:
+   ✓ PyTorch               - Deep learning framework
+   ✓ TorchVision           - Computer vision tools
+   ✓ FastAPI               - API framework
+   ✓ Uvicorn               - ASGI server
+   ✓ Pandas, NumPy         - Data processing
+   ✓ Pillow, OpenCV        - Image processing
+   ✓ Scikit-learn          - Machine learning
+   ✓ Matplotlib, Seaborn   - Visualization
+   ✓ và còn nhiều nữa...
+
+🐍 File Script Được Tạo/Cập Nhật:
+   ✓ train_cnn.py          (347 lines) - CNN training script
+   ✓ quick_setup.py        (279 lines) - Setup wizard
+   ✓ run_server.py         (26 lines)  - Server runner
+   ✓ requirements.txt      (39 lines)  - Dependencies list
+   ✓ QUICK_COMMANDS.md     (343 lines) - Command reference
+
+================================================================================
+
+🚀 HƯỚNG DẪN KHỞI ĐỘNG (3 BƯỚC):
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BƯỚC 1: HUẤN LUYỆN MÔ HÌNH CNN (Terminal 1)                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│ Lệnh:                                                                         │
+│   $ python3 train_cnn.py                                                      │
+│                                                                               │
+│ Tùy chọn:                                                                     │
+│   $ python3 train_cnn.py          # CPU mode                                  │
+│   $ CUDA_VISIBLE_DEVICES=0 python3 train_cnn.py  # GPU mode                   │
+│                                                                               │
+│ Thông tin:                                                                    │
+│   ⏱️  Thời gian: ~15-30 phút (CPU) | ~2-5 phút (GPU)                          │
+│   📊 Mô hình: ResNet50 (Transfer Learning)                                    │
+│   🎯 Epochs: 50                                                               │
+│   📦 Batch Size: 32                                                           │
+│   🖥️  Device: Auto-detect (GPU hoặc CPU)                                      │
+│   💾 Lưu tại: models/cnn_model.pth                                            │
+│   📈 Lịch sử: models/cnn_model_history.json                                   │
+│                                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BƯỚC 2: KHỞI ĐỘNG SERVER (Terminal 2 - SAU KHI TRAINING XON)               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│ Lệnh:                                                                         │
+│   $ python3 run_server.py                                                     │
+│                                                                               │
+│ Tùy chọn:                                                                     │
+│   $ python3 run_server.py           # Default: 127.0.0.1:3000                │
+│   $ HOST=0.0.0.0 PORT=8000 python3 run_server.py  # Custom host/port        │
+│                                                                               │
+│ Server chạy trên:                                                             │
+│   🌐 http://localhost:3000                                                    │
+│   🌐 http://127.0.0.1:3000                                                    │
+│   🌐 http://0.0.0.0:3000                                                      │
+│                                                                               │
+│ API Endpoints:                                                                │
+│   📊 POST /predict           - Dự đoán từ dữ liệu bệnh nhân                   │
+│   📊 POST /predict/batch     - Dự đoán hàng loạt từ CSV                      │
+│   📷 POST /predict/image     - Dự đoán từ hình ảnh ECG                       │
+│   💚 GET  /health            - Kiểm tra trạng thái server                    │
+│                                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ BƯỚC 3: MỞ WEB BROWSER (Terminal 3 hoặc Desktop)                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│ Trên Mac:                                                                     │
+│   $ open http://localhost:3000                                                │
+│                                                                               │
+│ Trên Linux:                                                                   │
+│   $ xdg-open http://localhost:3000                                            │
+│                                                                               │
+│ Trên Windows:                                                                 │
+│   $ start http://localhost:3000                                               │
+│                                                                               │
+│ Hoặc nhập vào trình duyệt:                                                   │
+│   http://localhost:3000/menu.html                                             │
+│                                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+
+🌐 TRANG WEB KHẢ DỤNG:
+
+📊 Dashboard & Home Page
+   URL: http://localhost:3000/menu.html
+   📖 Mô tả: Giao diện chính, menu chức năng
+
+🔮 Dự Đoán Từ Dữ Liệu Bệnh Nhân
+   URL: http://localhost:3000/train.html
+   📖 Mô tả: Form nhập 12 thông tin bệnh nhân, nhận kết quả dự đoán
+   🎯 Tính năng: CSV autocomplete, risk level visualization
+
+📷 Dự Đoán Từ Hình Ảnh ECG (NEW!)
+   URL: http://localhost:3000/image_predict.html
+   📖 Mô tả: Tải lên hình ảnh ECG, dự đoán bằng CNN model
+   🎯 Tính năng: Drag-and-drop upload, confidence score
+
+📊 Kiểm Tra Hàng Loạt (Batch Prediction)
+   URL: http://localhost:3000/batch_check.html
+   📖 Mô tả: Tải CSV file, dự đoán cho nhiều bệnh nhân
+   🎯 Tính năng: File upload, progress indicator, export results
+
+👥 Quản Lý Bệnh Nhân
+   URL: http://localhost:3000/patients.html
+   📖 Mô tả: Xem & sửa thông tin bệnh nhân
+   🎯 Tính năng: Lưu trữ, tìm kiếm, lọc
+
+📈 Báo Cáo & Thống Kê
+   URL: http://localhost:3000/reports.html
+   📖 Mô tả: Xem báo cáo kết quả dự đoán
+   🎯 Tính năng: Charts, graphs, statistics
+
+📜 Lịch Sử Dự Đoán
+   URL: http://localhost:3000/history.html
+   📖 Mô tả: Lịch sử tất cả các dự đoán
+   🎯 Tính năng: Timestamp, risk level, model version
+
+================================================================================
+
+💻 LỆNH NHANH & DEBUGGING:
+
+🔧 Setup & Dependencies
+───────────────────────
+# Kiểm tra Python version
+python3 --version
+
+# Kiểm tra PyTorch
+python3 -c "import torch; print(torch.__version__)"
+
+# Kiểm tra GPU/CUDA
+python3 -c "import torch; print(f'GPU: {torch.cuda.is_available()}')"
+
+# Cài đặt lại dependencies
+pip install --upgrade -r requirements.txt
+
+# Liệt kê installed packages
+pip freeze | grep -E "torch|fastapi|pandas"
+
+# Kiểm tra size của packages
+pip show torch | grep Size
+
+🚀 Training & Server
+───────────────────
+# Chạy training với CPU
+python3 train_cnn.py
+
+# Chạy training với GPU
+CUDA_VISIBLE_DEVICES=0 python3 train_cnn.py
+
+# Chạy server mặc định
+python3 run_server.py
+
+# Chạy server với custom port
+PORT=8081 python3 run_server.py
+
+# Kiểm tra server đang chạy
+curl http://127.0.0.1:3000/health
+
+# Kiểm tra port đang dùng
+lsof -i :3000
+
+# Dừng process trên port 3000
+kill -9 $(lsof -t -i:3000)
+
+🔍 API Testing
+───────────────
+# Test health endpoint
+curl -v http://127.0.0.1:3000/health
+
+# Test single prediction (POST)
+curl -X POST http://127.0.0.1:3000/predict \\
+  -H "Content-Type: application/json" \\
+  -d '{\"age\": 45, \"gender\": 1, \"weight\": 70}'
+
+# Test batch prediction (POST with CSV)
+curl -X POST http://127.0.0.1:3000/predict/batch \\
+  -F \"file=@data/synthetic_heart_disease_dataset.csv\"
+
+# Test image prediction (POST with image)
+curl -X POST http://127.0.0.1:3000/predict/image \\
+  -F \"file=@data/train/healthy/ecg_healthy_0.png\"
+
+📊 Model & Data Management
+───────────────────────────
+# Xem thông tin mô hình
+ls -lh models/cnn_model.pth
+ls -lh models/best_model.joblib
+
+# Xem lịch sử huấn luyện
+cat models/cnn_model_history.json | python3 -m json.tool
+
+# Xóa mô hình cũ (train lại từ đầu)
+rm -f models/cnn_model.pth models/cnn_model_history.json
+
+# Backup mô hình
+cp models/cnn_model.pth models/cnn_model_$(date +%Y%m%d).pth
+
+# Đếm ảnh huấn luyện
+echo "Healthy: $(ls data/train/healthy/ | wc -l)"
+echo "Disease: $(ls data/train/disease/ | wc -l)"
+
+# Xem CSV info
+head -3 data/synthetic_heart_disease_dataset.csv
+wc -l data/synthetic_heart_disease_dataset.csv
+
+🧹 Cleanup & Maintenance
+────────────────────────
+# Xóa log files
+rm -rf logs/*
+
+# Xóa upload files
+rm -rf uploads/images/*
+rm -rf uploads/results/*
+
+# Xóa cache
+find . -type d -name __pycache__ -exec rm -rf {} +
+find . -type f -name "*.pyc" -delete
+
+# Reset tất cả (CẢNH BÁO!)
+rm -rf data/train/healthy/* data/train/disease/*
+rm -f models/cnn_model.pth models/cnn_model_history.json
+
+📋 Logs & Output
+────────────────
+# Xem log real-time
+tail -f logs/training.log
+
+# Xem 100 dòng cuối
+tail -100 logs/training.log
+
+# Tìm error trong log
+grep -i "error" logs/training.log
+
+# Lưu output vào file
+python3 train_cnn.py > training_output.log 2>&1
+
+================================================================================
+
+📁 THÊM DỮ LIỆU ẢNH (TÙY CHỌN):
+
+Để cải thiện độ chính xác của mô hình, thêm hình ảnh ECG thực tế:
+
+1. Lưu ảnh vào các thư mục tương ứng:
+   
+   Ảnh ECG bình thường (No disease):
+   → data/train/healthy/
+   → data/val/healthy/
+   → data/test/healthy/
+
+   Ảnh ECG bất thường (Disease present):
+   → data/train/disease/
+   → data/val/disease/
+   → data/test/disease/
+
+2. Định dạng hỗ trợ:
+   ✓ .jpg, .png, .jpeg
+   ✓ Kích thước tự động resize: 224x224 pixel
+   ✓ Color mode: RGB (tự động chuyển đổi)
+
+3. Chạy lại training để cải thiện mô hình:
+   $ python3 train_cnn.py
+
+4. Tips:
+   • Sử dụng ít nhất 100 ảnh/class để có kết quả tốt
+   • Ảnh độ phân giải cao (> 200x200) cho kết quả tốt hơn
+   • Cân bằng số lượng ảnh giữa 2 class
+   • Data augmentation tự động được áp dụng
+
+================================================================================
+
+🐛 TROUBLESHOOTING:
+
+❌ Lỗi: ModuleNotFoundError: No module named 'torch'
+   ✅ Giải pháp: pip install torch torchvision
+
+❌ Lỗi: Port 3000 already in use
+   ✅ Giải pháp: 
+   • lsof -i :3000 (tìm process)
+   • kill -9 <PID> (dừng process)
+   • Hoặc dùng port khác: PORT=8081 python3 run_server.py
+
+❌ Lỗi: FileNotFoundError: data/synthetic_heart_disease_dataset.csv
+   ✅ Giải pháp: Đảm bảo file CSV tồn tại trong thư mục data/
+
+❌ Lỗi: CUDA out of memory
+   ✅ Giải pháp:
+   • Giảm batch size trong train_cnn.py (line 340)
+   • Hoặc chạy với CPU thay vì GPU
+
+❌ Lỗi: Permission denied khi chạy script
+   ✅ Giải pháp: chmod +x train_cnn.py quick_setup.py run_server.py
+
+❌ Lỗi: HTTP Error 404 Not Found
+   ✅ Giải pháp: Kiểm tra URL, đảm bảo server đang chạy
+
+❌ Lỗi: ValueError: not enough values to unpack
+   ✅ Giải pháp: Kiểm tra format CSV, đảm bảo 21 cột
+
+================================================================================
+
+📖 TÀI LIỆU THAM KHẢO:
+
+Các file hướng dẫn có sẵn:
+• QUICK_COMMANDS.md        - Danh sách chi tiết các lệnh
+• README_RUN.md            - Hướng dẫn chạy hệ thống
+• train_cnn.py (comments)  - Giải thích code training
+• src/app.py (docstrings)  - API documentation
+
+Tài liệu trực tuyến:
+• PyTorch: https://pytorch.org/docs/stable/
+• FastAPI: https://fastapi.tiangolo.com/
+• ResNet: https://arxiv.org/abs/1512.03385
+• ECG Analysis: https://en.wikipedia.org/wiki/Electrocardiography
+
+================================================================================
+
+✨ WORKFLOW KHUYẾN NGHỊ:
+
+Terminal 1:
+──────────
+$ python3 train_cnn.py
+# Chờ ~15-30 phút cho training hoàn tất
+
+Terminal 2 (sau khi training xong):
+────────────────────────────────────
+$ python3 run_server.py
+# Server chạy trên http://localhost:3000
+
+Terminal 3 (hoặc desktop):
+─────────────────────────
+$ open http://localhost:3000
+# Truy cập web UI
+
+Sử dụng:
+───────
+1. Vào menu.html để chọn chức năng
+2. Train.html để dự đoán từ dữ liệu
+3. Image_predict.html để dự đoán từ ảnh
+4. Batch_check.html để tải CSV hàng loạt
+
+Dừng:
+─────
+Nhấn Ctrl+C trong Terminal 1 & 2
+
+================================================================================
+
+🎯 MỤC TIÊU:
+
+✅ Environment setup
+✅ Dependencies installation
+✅ Directory structure
+✅ Sample ECG images creation
+✅ CNN training script ready
+✅ FastAPI server ready
+✅ Web UI pages ready
+✅ Command reference created
+
+🔜 BƯỚC TIẾP THEO:
+
+1️⃣  Chạy: python3 train_cnn.py
+2️⃣  Chạy: python3 run_server.py
+3️⃣  Mở: http://localhost:3000
+4️⃣  Thử nghiệm các tính năng
+5️⃣  Thêm dữ liệu ảnh của riêng bạn
+6️⃣  Huấn luyện lại mô hình
+
+================================================================================
+
+📞 LIÊN HỆ & HỖ TRỢ:
+
+Nếu gặp vấn đề:
+• Kiểm tra file QUICK_COMMANDS.md
+• Xem troubleshooting section ở trên
+• Kiểm tra logs trong thư mục logs/
+• Đọc comments trong source code
+
+================================================================================
+
+Hệ thống sẵn sàng! Bắt đầu bằng:
+
+    python3 train_cnn.py
+
+Chúc bạn thành công! 🚀
+
+================================================================================
+"""
+
+if __name__ == "__main__":
+    print(SETUP_SUMMARY)

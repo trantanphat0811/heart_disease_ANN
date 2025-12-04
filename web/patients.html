@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Bệnh Nhân - Dự Đoán Bệnh Tim</title>
+    <link rel="stylesheet" href="/static/common.css">
+    <style>
+        .action-cell { display: flex; gap: 8px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="menu.html" class="logo">
+            <div class="logo-icon">❤️</div>
+            <span>Heart Care</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="menu.html">🏠 Trang Chủ</a></li>
+            <li><a href="train.html">🔮 Dự Đoán</a></li>
+            <li><a href="batch_check.html">📊 Hàng Loạt</a></li>
+            <li><a href="history.html">📜 Lịch Sử</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>👥 Quản Lý Bệnh Nhân</h1>
+            <p class="subtitle">Danh sách tất cả bệnh nhân được dự đoán từ các lần kiểm tra hàng loạt</p>
+        </header>
+
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="totalPatients">0</div>
+                <div class="stat-label">Tổng Bệnh Nhân</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="highRiskCount">0</div>
+                <div class="stat-label">Nguy Cơ Cao</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="lowRiskCount">0</div>
+                <div class="stat-label">Nguy Cơ Thấp</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="highRiskPercent">0%</div>
+                <div class="stat-label">Tỷ Lệ Cao</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm theo tuổi, giới tính, BMI, huyết áp...">
+                <button class="search-btn" onclick="performSearch()">Tìm Kiếm</button>
+                <button class="search-btn" onclick="clearSearch()" style="background: #666;">Xóa</button>
+            </div>
+            <button class="btn btn-success" onclick="exportPatients()">📥 Xuất CSV</button>
+            <button class="btn btn-danger" onclick="deleteAllConfirm()">🗑️ Xóa Tất Cả</button>
+        </div>
+
+        <!-- Patients Table -->
+        <div class="table-section">
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">👤</div>
+                <div class="empty-text">Chưa có dữ liệu bệnh nhân</div>
+                <p style="color: #999;">Tải lên file CSV từ trang <a href="batch_check.html" style="color: var(--primary); font-weight: 700;">kiểm tra hàng loạt</a></p>
+            </div>
+            
+            <div id="tableContainer" style="display: none;">
+                <div class="table-wrapper">
+                    <table id="patientsTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tuổi</th>
+                                <th>Giới Tính</th>
+                                <th>BMI</th>
+                                <th>Huyết Áp (mmHg)</th>
+                                <th>Nhịp Tim</th>
+                                <th>Cholesterol</th>
+                                <th>Nguy Cơ (%)</th>
+                                <th>Mức Độ</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patientsBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Chi Tiết Bệnh Nhân</div>
+                <button class="close-btn" onclick="closeDetailModal()">✕</button>
+            </div>
+            <div id="detailContent"></div>
+            <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
+                <button class="btn btn-secondary" onclick="closeDetailModal()">Đóng</button>
+                <button class="btn btn-danger" onclick="deleteCurrentPatient()">Xóa Bệnh Nhân</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/patient-data.js"></script>
+    <script>
+        let allPatients = [];
+        let currentPatientId = null;
+
+        function loadPatients() {
+            console.log('📋 [patients.html] loadPatients called');
+            console.log('👉 [patients.html] PatientDataManager type:', typeof PatientDataManager);
+            
+            if (typeof PatientDataManager === 'undefined') {
+                console.error('❌ [patients.html] PatientDataManager NOT available!');
+                alert('❌ Lỗi: PatientDataManager chưa load. Vui lòng reload trang.');
+                return;
+            }
+            
+            allPatients = PatientDataManager.getAllPatients();
+            console.log('✅ [patients.html] Loaded', allPatients.length, 'patients:', allPatients);
+            displayPatients(allPatients);
+            updateStatistics();
+        }
+
+        function displayPatients(patients) {
+            console.log('📊 [patients.html] displayPatients called with', patients.length, 'patients');
+            const tbody = document.getElementById('patientsBody');
+            const tableContainer = document.getElementById('tableContainer');
+            const emptyState = document.getElementById('emptyState');
+
+            tbody.innerHTML = '';
+
+            if (patients.length === 0) {
+                tableContainer.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            tableContainer.style.display = 'block';
+            emptyState.style.display = 'none';
+
+            patients.forEach((patient, idx) => {
+                const riskPercent = (patient.risk_score * 100).toFixed(1);
+                const riskBadge = patient.label === 'Cao' 
+                    ? `<span class="badge badge-high">⬆️ ${patient.label}</span>`
+                    : `<span class="badge badge-low">⬇️ ${patient.label}</span>`;
+
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${idx + 1}</td>
+                    <td>${patient.Age || '-'}</td>
+                    <td>${patient.Gender || '-'}</td>
+                    <td>${patient.BMI?.toFixed(1) || '-'}</td>
+                    <td>${patient.Systolic_BP}/${patient.Diastolic_BP}</td>
+                    <td>${patient.Heart_Rate || '-'}</td>
+                    <td>${patient.Cholesterol_Total || '-'}</td>
+                    <td>${riskPercent}</td>
+                    <td>${riskBadge}</td>
+                    <td>
+                        <div class="action-cell">
+                            <button class="btn-sm btn-info" onclick="showDetails('${patient.patientId}')">👁️ Xem</button>
+                            <button class="btn-sm btn-delete" onclick="deletePatient('${patient.patientId}')">🗑️</button>
+                        </div>
+                    </td>
+                `;
+            });
+        }
+
+        function updateStatistics() {
+            const stats = PatientDataManager.getStatistics();
+            document.getElementById('totalPatients').textContent = stats.totalPatients;
+            document.getElementById('highRiskCount').textContent = stats.highRisk;
+            document.getElementById('lowRiskCount').textContent = stats.lowRisk;
+            document.getElementById('highRiskPercent').textContent = stats.highRiskPercent + '%';
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (!query) {
+                loadPatients();
+                return;
+            }
+
+            const results = PatientDataManager.searchPatients(query);
+            displayPatients(results);
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            loadPatients();
+        }
+
+        function showDetails(patientId) {
+            currentPatientId = patientId;
+            const patient = PatientDataManager.getPatientById(patientId);
+            if (!patient) return;
+
+            const riskPercent = (patient.risk_score * 100).toFixed(1);
+            const bpColor = patient.Systolic_BP > 140 || patient.Diastolic_BP > 90 ? 'style="color: var(--danger);"' : '';
+
+            const detailContent = document.getElementById('detailContent');
+            detailContent.innerHTML = `
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-label">Tuổi</div>
+                        <div class="detail-value">${patient.Age}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Giới Tính</div>
+                        <div class="detail-value">${patient.Gender}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Chiều Cao (cm)</div>
+                        <div class="detail-value">${patient.Height}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Cân Nặng (kg)</div>
+                        <div class="detail-value">${patient.Weight}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">BMI</div>
+                        <div class="detail-value">${patient.BMI?.toFixed(1)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Hút Thuốc</div>
+                        <div class="detail-value">${patient.Smoking}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Rượu Bia</div>
+                        <div class="detail-value">${patient.Alcohol_Intake}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Hoạt Động Thể Chất</div>
+                        <div class="detail-value">${patient.Physical_Activity}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Chế Độ Ăn</div>
+                        <div class="detail-value">${patient.Diet}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Mức Độ Căng Thẳng</div>
+                        <div class="detail-value">${patient.Stress_Level}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Tăng Huyết Áp</div>
+                        <div class="detail-value">${patient.Hypertension ? '✅ Có' : '❌ Không'}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Tiểu Đường</div>
+                        <div class="detail-value">${patient.Diabetes ? '✅ Có' : '❌ Không'}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Mỡ Máu Cao</div>
+                        <div class="detail-value">${patient.Hyperlipidemia ? '✅ Có' : '❌ Không'}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Tiền Sử Bệnh Tim</div>
+                        <div class="detail-value">${patient.Family_History ? '✅ Có' : '❌ Không'}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Từng Nhồi Tim</div>
+                        <div class="detail-value">${patient.Previous_Heart_Attack ? '✅ Có' : '❌ Không'}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Huyết Áp Tâm Thu (mmHg)</div>
+                        <div class="detail-value" ${bpColor}>${patient.Systolic_BP}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Huyết Áp Tâm Trương (mmHg)</div>
+                        <div class="detail-value" ${bpColor}>${patient.Diastolic_BP}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Nhịp Tim (nhịp/phút)</div>
+                        <div class="detail-value">${patient.Heart_Rate}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Đường Huyết Lúc Nhịn (mg/dL)</div>
+                        <div class="detail-value">${patient.Blood_Sugar_Fasting}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Cholesterol Toàn Phần (mg/dL)</div>
+                        <div class="detail-value">${patient.Cholesterol_Total}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Nguy Cơ Bệnh Tim</div>
+                        <div class="detail-value">${riskPercent}%</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Kết Luận</div>
+                        <div class="detail-value" style="color: ${patient.label === 'Cao' ? 'var(--danger)' : 'var(--success)'};">
+                            ${patient.label === 'Cao' ? '⬆️ Nguy Cơ Cao' : '⬇️ Nguy Cơ Thấp'}
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Ngày Dự Đoán</div>
+                        <div class="detail-value">${new Date(patient.prediction_date).toLocaleString('vi-VN')}</div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detailModal').classList.remove('active');
+            currentPatientId = null;
+        }
+
+        function deletePatient(patientId) {
+            if (confirm('⚠️ Xác nhận xóa bệnh nhân này?')) {
+                if (PatientDataManager.deletePatient(patientId)) {
+                    loadPatients();
+                    alert('✅ Đã xóa bệnh nhân');
+                }
+            }
+        }
+
+        function deleteCurrentPatient() {
+            if (currentPatientId) {
+                closeDetailModal();
+                deletePatient(currentPatientId);
+            }
+        }
+
+        function deleteAllConfirm() {
+            if (confirm('⚠️ XÁC NHẬN xóa TOÀN BỘ bệnh nhân? Hành động này không thể hoàn tác!')) {
+                if (PatientDataManager.clearAllData()) {
+                    loadPatients();
+                }
+            }
+        }
+
+        function exportPatients() {
+            if (PatientDataManager.exportPatientsToCSV()) {
+                alert('✅ Xuất dữ liệu thành công');
+            } else {
+                alert('❌ Lỗi khi xuất dữ liệu');
+            }
+        }
+
+        // Load on page load with delay to ensure PatientDataManager is available
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(loadPatients, 100);
+            
+            // Listen for data updates from other tabs
+            try {
+                const channel = new BroadcastChannel('patient_data_updates');
+                channel.onmessage = (event) => {
+                    if (event.data.type === 'data-updated') {
+                        console.log('📡 [patients.html] Received data update from batch_check:', event.data);
+                        // Auto-reload patients list
+                        setTimeout(loadPatients, 200);
+                    }
+                };
+                console.log('✅ [patients.html] Listening for broadcast updates');
+            } catch (error) {
+                console.warn('⚠️ [patients.html] BroadcastChannel not available:', error);
+            }
+        });
+    </script>
+</body>
+</html>

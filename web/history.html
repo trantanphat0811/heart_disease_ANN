@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Sử Kiểm Tra - Dự Đoán Bệnh Tim</title>
+    <link rel="stylesheet" href="/static/common.css">
+    <style>
+        .batch-item { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 20px; border-left: 5px solid var(--primary); }
+        .batch-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .batch-title { font-size: 1.3em; font-weight: 700; color: var(--primary); }
+        .batch-filename { color: #666; font-size: 0.95em; }
+        .batch-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px; }
+        .meta-item { background: #f5f5f5; padding: 12px; border-radius: 8px; }
+        .meta-label { color: #666; font-size: 0.85em; }
+        .meta-value { font-size: 1.2em; font-weight: 700; color: #333; margin-top: 5px; }
+        .batch-stats { display: flex; gap: 15px; padding-top: 15px; border-top: 2px solid #f0f0f0; }
+        .stat-pill { background: #f5f5f5; padding: 10px 20px; border-radius: 20px; font-weight: 600; }
+        .stat-pill-high { background: rgba(231, 76, 60, 0.1); color: var(--danger); }
+        .stat-pill-low { background: rgba(39, 174, 96, 0.1); color: var(--success); }
+        .batch-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+        .patient-row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; padding: 10px; border-bottom: 1px solid #f0f0f0; font-size: 0.85em; }
+        .patient-row:hover { background: #f5f5f5; }
+        
+        @media (max-width: 768px) {
+            .batch-meta { grid-template-columns: repeat(2, 1fr); }
+            .batch-actions { flex-direction: column; }
+            .btn-sm { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="menu.html" class="logo">
+            <div class="logo-icon">❤️</div>
+            <span>Heart Care</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="menu.html">🏠 Trang Chủ</a></li>
+            <li><a href="train.html">🔮 Dự Đoán</a></li>
+            <li><a href="batch_check.html">📊 Hàng Loạt</a></li>
+            <li><a href="patients.html">👥 Bệnh Nhân</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>📜 Lịch Sử Kiểm Tra</h1>
+            <p class="subtitle">Các lần tải lên và xử lý dữ liệu bệnh nhân hàng loạt</p>
+        </header>
+
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="totalBatches">0</div>
+                <div class="stat-label">Tổng Lần Kiểm Tra</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalPatients">0</div>
+                <div class="stat-label">Tổng Bệnh Nhân</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalHighRisk">0</div>
+                <div class="stat-label">Nguy Cơ Cao</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="avgRiskScore">0%</div>
+                <div class="stat-label">Trung Bình Nguy Cơ</div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn btn-success" onclick="exportHistory()">📥 Xuất Lịch Sử</button>
+            <button class="btn btn-danger" onclick="deleteHistoryConfirm()">🗑️ Xóa Tất Cả Lịch Sử</button>
+        </div>
+
+        <!-- Batch History -->
+        <div id="historyContainer"></div>
+    </div>
+
+    <!-- Batch Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Chi Tiết Kiểm Tra</h2>
+                <button class="close-btn" onclick="closeDetailModal()">×</button>
+            </div>
+            <div id="detailContent" style="max-height: 60vh; overflow-y: auto;"></div>
+            <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: flex-end;">
+                <button class="btn btn-secondary" onclick="closeDetailModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/patient-data.js"></script>
+    <script>
+        function loadHistory() {
+            console.log('📜 [history.html] loadHistory called');
+            console.log('👉 [history.html] PatientDataManager type:', typeof PatientDataManager);
+            
+            if (typeof PatientDataManager === 'undefined') {
+                console.error('❌ [history.html] PatientDataManager NOT available!');
+                alert('❌ Lỗi: PatientDataManager chưa load. Vui lòng reload trang.');
+                return;
+            }
+            
+            const history = PatientDataManager.getBatchHistory();
+            console.log('✅ [history.html] Loaded', history.length, 'batches');
+            const container = document.getElementById('historyContainer');
+            
+            if (history.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">📋</div>
+                        <div class="empty-text">Chưa có lịch sử kiểm tra</div>
+                        <p style="color: #999;">Bắt đầu bằng cách <a href="batch_check.html" style="color: var(--primary); font-weight: 700;">tải lên file CSV</a></p>
+                    </div>
+                `;
+                updateStatistics();
+                return;
+            }
+
+            container.innerHTML = '';
+            
+            history.forEach((batch, idx) => {
+                const uploadDate = new Date(batch.uploadDate);
+                const highPercent = batch.totalPatients > 0 ? Math.round((batch.stats.totalHigh / batch.totalPatients) * 100) : 0;
+                
+                const batchHTML = document.createElement('div');
+                batchHTML.className = 'batch-item';
+                batchHTML.innerHTML = `
+                    <div class="batch-header">
+                        <div>
+                            <div class="batch-title">#${history.length - idx}: ${batch.filename}</div>
+                            <div class="batch-filename">Ngày tải: ${uploadDate.toLocaleString('vi-VN')}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="batch-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Tổng Bệnh Nhân</div>
+                            <div class="meta-value">${batch.totalPatients}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Nguy Cơ Cao</div>
+                            <div class="meta-value" style="color: var(--danger);">${batch.stats.totalHigh}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Nguy Cơ Thấp</div>
+                            <div class="meta-value" style="color: var(--success);">${batch.stats.totalLow}</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Tỷ Lệ Cao</div>
+                            <div class="meta-value">${highPercent}%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="batch-stats">
+                        <span class="stat-pill stat-pill-high">⬆️ ${batch.stats.totalHigh} Cao</span>
+                        <span class="stat-pill stat-pill-low">⬇️ ${batch.stats.totalLow} Thấp</span>
+                    </div>
+                    
+                    <div class="batch-actions">
+                        <button class="btn-sm btn-view" onclick="showBatchDetails('${batch.id}')">👁️ Xem Chi Tiết</button>
+                        <button class="btn-sm btn-export" onclick="exportBatch('${batch.id}')">📥 Xuất CSV</button>
+                        <button class="btn-sm btn-delete" onclick="deleteBatch('${batch.id}')">🗑️ Xóa</button>
+                    </div>
+                `;
+                
+                container.appendChild(batchHTML);
+            });
+
+            updateStatistics();
+        }
+
+        function showBatchDetails(batchId) {
+            const batch = PatientDataManager.getBatchHistory().find(b => b.id === batchId);
+            if (!batch) return;
+
+            const detailContent = document.getElementById('detailContent');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalTitle.textContent = `Chi Tiết Kiểm Tra: ${batch.filename}`;
+            
+            let html = `
+                <div style="margin-bottom: 20px;">
+                    <h3 style="margin-bottom: 10px; color: var(--primary);">📊 Tổng Quan</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                        <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+                            <div style="color: #666; font-size: 0.85em;">Tổng Bệnh Nhân</div>
+                            <div style="font-size: 1.3em; font-weight: 700; color: var(--primary);">${batch.totalPatients}</div>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 10px; border-radius: 6px;">
+                            <div style="color: #666; font-size: 0.85em;">Ngày Tải</div>
+                            <div style="font-size: 1.1em; font-weight: 700;">${new Date(batch.uploadDate).toLocaleString('vi-VN')}</div>
+                        </div>
+                        <div style="background: rgba(231, 76, 60, 0.1); padding: 10px; border-radius: 6px;">
+                            <div style="color: #666; font-size: 0.85em;">Nguy Cơ Cao</div>
+                            <div style="font-size: 1.3em; font-weight: 700; color: var(--danger);">${batch.stats.totalHigh}</div>
+                        </div>
+                        <div style="background: rgba(39, 174, 96, 0.1); padding: 10px; border-radius: 6px;">
+                            <div style="color: #666; font-size: 0.85em;">Nguy Cơ Thấp</div>
+                            <div style="font-size: 1.3em; font-weight: 700; color: var(--success);">${batch.stats.totalLow}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 10px; color: var(--primary);">👥 Danh Sách Bệnh Nhân</h3>
+                    <div class="patient-row" style="font-weight: 700; background: #f0f0f0;">
+                        <div>#</div>
+                        <div>Tuổi</div>
+                        <div>Giới Tính</div>
+                        <div>BMI</div>
+                        <div>BP</div>
+                        <div>Nhịp Tim</div>
+                        <div>Nguy Cơ</div>
+                        <div>Mức Độ</div>
+                    </div>
+            `;
+
+            batch.patients.forEach((patient, idx) => {
+                const riskPercent = (patient.risk_score * 100).toFixed(1);
+                const riskLevel = patient.label === 'Cao' ? '⬆️' : '⬇️';
+                html += `
+                    <div class="patient-row">
+                        <div>${idx + 1}</div>
+                        <div>${patient.Age}</div>
+                        <div>${patient.Gender}</div>
+                        <div>${patient.BMI?.toFixed(1)}</div>
+                        <div>${patient.Systolic_BP}/${patient.Diastolic_BP}</div>
+                        <div>${patient.Heart_Rate}</div>
+                        <div>${riskPercent}%</div>
+                        <div>${riskLevel} ${patient.label}</div>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+            detailContent.innerHTML = html;
+            
+            document.getElementById('detailModal').classList.add('active');
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detailModal').classList.remove('active');
+        }
+
+        function exportBatch(batchId) {
+            if (PatientDataManager.exportBatchToCSV(batchId)) {
+                alert('✅ Xuất batch thành công');
+            } else {
+                alert('❌ Lỗi khi xuất batch');
+            }
+        }
+
+        function deleteBatch(batchId) {
+            if (confirm('⚠️ Xác nhận xóa kiểm tra này và tất cả bệnh nhân trong đó?')) {
+                if (PatientDataManager.deleteBatch(batchId)) {
+                    loadHistory();
+                    alert('✅ Đã xóa kiểm tra');
+                }
+            }
+        }
+
+        function deleteHistoryConfirm() {
+            if (confirm('⚠️ XÁC NHẬN xóa TOÀN BỘ lịch sử? Hành động này không thể hoàn tác!')) {
+                if (PatientDataManager.clearAllData()) {
+                    loadHistory();
+                }
+            }
+        }
+
+        function exportHistory() {
+            if (PatientDataManager.exportAllDataAsJSON()) {
+                alert('✅ Xuất dữ liệu thành công');
+            } else {
+                alert('❌ Lỗi khi xuất dữ liệu');
+            }
+        }
+
+        function updateStatistics() {
+            const stats = PatientDataManager.getStatistics();
+            document.getElementById('totalBatches').textContent = stats.totalBatches;
+            document.getElementById('totalPatients').textContent = stats.totalPatients;
+            document.getElementById('totalHighRisk').textContent = stats.highRisk;
+            document.getElementById('avgRiskScore').textContent = stats.averageRiskScore + '%';
+        }
+
+        // Load on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(loadHistory, 100);
+            
+            // Listen for data updates from other tabs
+            try {
+                const channel = new BroadcastChannel('patient_data_updates');
+                channel.onmessage = (event) => {
+                    if (event.data.type === 'data-updated') {
+                        console.log('📡 [history.html] Received data update from batch_check:', event.data);
+                        // Auto-reload history
+                        setTimeout(loadHistory, 200);
+                    }
+                };
+                console.log('✅ [history.html] Listening for broadcast updates');
+            } catch (error) {
+                console.warn('⚠️ [history.html] BroadcastChannel not available:', error);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 Test & Debug - Heart Disease</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        
+        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 20px; text-align: center; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .subtitle { font-size: 1.1em; opacity: 0.9; }
+        
+        .tabs { display: flex; background: #f8f9fa; border-bottom: 2px solid #e0e0e0; overflow-x: auto; }
+        .tab-btn { padding: 15px 25px; background: none; border: none; cursor: pointer; font-weight: 600; font-size: 1em; color: #666; transition: all 0.3s; border-bottom: 3px solid transparent; }
+        .tab-btn.active { color: #667eea; border-bottom-color: #667eea; }
+        .tab-btn:hover { color: #667eea; background: rgba(102, 126, 234, 0.05); }
+        
+        .tab-content { display: none; padding: 40px; }
+        .tab-content.active { display: block; }
+        
+        .step { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #667eea; }
+        .step h3 { color: #667eea; margin-bottom: 10px; font-size: 1.2em; }
+        .step p { color: #666; margin-bottom: 10px; }
+        
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        button { padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.95em; transition: all 0.3s; }
+        button:hover { background: #764ba2; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        button.danger { background: #e74c3c; }
+        button.danger:hover { background: #c0392b; }
+        button.success { background: #27ae60; }
+        button.success:hover { background: #229954; }
+        
+        .result { background: #ecf0f1; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 0.9em; max-height: 400px; overflow-y: auto; line-height: 1.6; }
+        .success-msg { color: green; font-weight: bold; }
+        .error-msg { color: red; font-weight: bold; }
+        .info-msg { color: #667eea; font-weight: bold; }
+        
+        .progress { margin: 10px 0; }
+        .progress-bar { background: #e0e0e0; height: 4px; border-radius: 2px; overflow: hidden; }
+        .progress-fill { background: #27ae60; height: 100%; width: 0%; transition: width 0.3s; }
+        
+        .stat { display: inline-block; margin: 10px 10px 10px 0; padding: 12px 20px; background: #e9ecef; border-radius: 4px; border-left: 4px solid #667eea; }
+        .stat-label { font-weight: bold; color: #333; }
+        .stat-value { color: #667eea; font-size: 1.3em; font-weight: 700; }
+        
+        .links { margin-top: 20px; padding-top: 20px; border-top: 2px solid #e0e0e0; }
+        .link-item { margin: 8px 0; }
+        .link-item a { display: inline-block; padding: 8px 16px; background: #667eea; color: white; border-radius: 4px; text-decoration: none; font-weight: 600; transition: all 0.3s; }
+        .link-item a:hover { background: #764ba2; }
+        
+        pre { background: #f8f9fa; padding: 15px; border-radius: 6px; overflow-x: auto; max-height: 350px; font-size: 0.85em; line-height: 1.5; }
+        
+        @media (max-width: 768px) {
+            .tabs { overflow-x: scroll; }
+            .tab-btn { padding: 12px 15px; font-size: 0.9em; }
+            .tab-content { padding: 20px; }
+            header { padding: 20px; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧪 Test & Debug Suite</h1>
+            <p class="subtitle">CSV → API → localStorage → Patients & History</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab(0)">🚀 Full Flow</button>
+            <button class="tab-btn" onclick="switchTab(1)">📊 Status Check</button>
+            <button class="tab-btn" onclick="switchTab(2)">📄 Storage Inspector</button>
+        </div>
+
+        <!-- Tab 1: Full Flow Test -->
+        <div class="tab-content active">
+            <div class="step">
+                <h3>📋 Step 1: Kiểm Tra localStorage Hiện Tại</h3>
+                <p>Xem dữ liệu đã lưu trước đó</p>
+                <button onclick="checkCurrentStorage()">✅ Kiểm Tra</button>
+                <div id="step1-result" class="result" style="display:none;"></div>
+            </div>
+
+            <div class="step">
+                <h3>📤 Step 2: Giả Lập Upload CSV</h3>
+                <p>Tạo dữ liệu test và gọi PatientDataManager.saveBatchResults()</p>
+                <div class="btn-group">
+                    <button onclick="simulateBatchUpload()">🚀 Giả Lập Upload</button>
+                </div>
+                <div id="step2-result" class="result" style="display:none;"></div>
+                <div class="progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="upload-progress" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>✅ Step 3: Kiểm Tra localStorage Sau Upload</h3>
+                <p>Xem dữ liệu vừa được lưu</p>
+                <button onclick="checkStorageAfter()">📊 Kiểm Tra</button>
+                <div id="step3-result" class="result" style="display:none;"></div>
+            </div>
+
+            <div class="step">
+                <h3>🧹 Step 4: Clear Dữ Liệu</h3>
+                <p>Xóa tất cả dữ liệu để làm sạch</p>
+                <button class="danger" onclick="clearStorage()">🗑️ Xóa Tất Cả</button>
+                <div id="step4-result" class="result" style="display:none;"></div>
+            </div>
+
+            <div class="links">
+                <h3>📍 Các Trang Để Test:</h3>
+                <div class="link-item"><a href="/static/batch_check.html" target="_blank">📊 Dự Đoán Hàng Loạt</a> - Upload CSV thực tế</div>
+                <div class="link-item"><a href="/static/patients.html" target="_blank">👥 Quản Lý Bệnh Nhân</a> - Xem danh sách sau upload</div>
+                <div class="link-item"><a href="/static/history.html" target="_blank">📜 Lịch Sử</a> - Xem lịch sử batch</div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Status Check -->
+        <div class="tab-content">
+            <div class="step">
+                <h3>📊 Status Check</h3>
+                <p>Kiểm tra trạng thái hệ thống</p>
+                <div class="btn-group">
+                    <button onclick="checkStatus()">🔍 Full Check</button>
+                    <button onclick="showStatistics()">📈 Statistics</button>
+                </div>
+                <div id="status-result" class="result" style="display:none;"></div>
+            </div>
+
+            <div class="step">
+                <h3>👥 All Patients</h3>
+                <button onclick="showAllPatients()">📋 Show</button>
+                <div id="patients-result" class="result" style="display:none;"></div>
+            </div>
+
+            <div class="step">
+                <h3>📜 Batch History</h3>
+                <button onclick="showHistory()">📋 Show</button>
+                <div id="history-result" class="result" style="display:none;"></div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Storage Inspector -->
+        <div class="tab-content">
+            <div class="step">
+                <h3>🔍 localStorage Inspector</h3>
+                <p>Xem chi tiết dữ liệu trong localStorage</p>
+                <div class="btn-group">
+                    <button onclick="showRawStorage()">📄 Raw Data</button>
+                    <button onclick="showStorageSize()">💾 Size Info</button>
+                    <button class="danger" onclick="clearAllStorage()">🗑️ Clear All</button>
+                </div>
+                <div id="storage-result" class="result" style="display:none;"></div>
+            </div>
+
+            <div class="step">
+                <h3>📋 patient_history Key</h3>
+                <button onclick="showPatientHistory()">Show</button>
+                <div id="history-raw" class="result" style="display:none;"></div>
+            </div>
+
+            <div class="step">
+                <h3>👥 all_patients Key</h3>
+                <button onclick="showAllPatientsRaw()">Show</button>
+                <div id="patients-raw" class="result" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/patient-data.js"></script>
+    <script>
+        // Tab switching
+        function switchTab(index) {
+            document.querySelectorAll('.tab-content').forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+            });
+            document.querySelectorAll('.tab-btn').forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+            });
+        }
+
+        // Utility functions
+        function log(elementId, msg, type = 'info') {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            el.style.display = 'block';
+            const className = type === 'success' ? 'success-msg' : type === 'error' ? 'error-msg' : 'info-msg';
+            el.innerHTML += `<div class="${className}">${msg}</div>`;
+            console.log(msg);
+        }
+
+        function clear(elementId) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            el.innerHTML = '';
+            el.style.display = 'none';
+        }
+
+        // ===== TAB 1: Full Flow =====
+        function checkCurrentStorage() {
+            clear('step1-result');
+            log('step1-result', '🔍 Kiểm tra...');
+            
+            const history = localStorage.getItem('patient_history');
+            const patients = localStorage.getItem('all_patients');
+            
+            log('step1-result', `patient_history: ${history ? `✅ (${history.length} bytes)` : '❌ không tìm thấy'}`);
+            log('step1-result', `all_patients: ${patients ? `✅ (${patients.length} bytes)` : '❌ không tìm thấy'}`);
+            
+            const stats = PatientDataManager.getStatistics();
+            log('step1-result', `📊 Thống kê: ${stats.totalPatients} bệnh nhân, ${stats.totalBatches} batch`, 'success');
+        }
+
+        function simulateBatchUpload() {
+            clear('step2-result');
+            
+            if (typeof PatientDataManager === 'undefined') {
+                log('step2-result', '❌ PatientDataManager chưa load!', 'error');
+                return;
+            }
+            
+            log('step2-result', '🚀 Bắt đầu giả lập...');
+            document.getElementById('upload-progress').style.width = '25%';
+            
+            const testData = [
+                {
+                    Age: 45, Gender: 'Male', Weight: 75, Height: 175, BMI: 24.5,
+                    Smoking: 'Yes', Alcohol_Intake: 'No', Physical_Activity: 'Regular',
+                    Diet: 'Balanced', Stress_Level: 'Normal', Hypertension: 0,
+                    Diabetes: 0, Hyperlipidemia: 0, Family_History: 0,
+                    Previous_Heart_Attack: 0, Systolic_BP: 120, Diastolic_BP: 80,
+                    Heart_Rate: 70, Blood_Sugar_Fasting: 100, Cholesterol_Total: 180,
+                    label: 'Thấp', risk_score: 0.2
+                },
+                {
+                    Age: 58, Gender: 'Female', Weight: 68, Height: 165, BMI: 25,
+                    Smoking: 'No', Alcohol_Intake: 'Yes', Physical_Activity: 'Moderate',
+                    Diet: 'High_Fat', Stress_Level: 'High', Hypertension: 1,
+                    Diabetes: 0, Hyperlipidemia: 0, Family_History: 1,
+                    Previous_Heart_Attack: 0, Systolic_BP: 130, Diastolic_BP: 85,
+                    Heart_Rate: 75, Blood_Sugar_Fasting: 110, Cholesterol_Total: 220,
+                    label: 'Cao', risk_score: 0.8
+                }
+            ];
+            
+            log('step2-result', `✅ Tạo ${testData.length} bệnh nhân test`);
+            document.getElementById('upload-progress').style.width = '50%';
+            
+            const stats = {
+                totalHigh: 1,
+                totalLow: 1,
+                timestamp: new Date().toISOString()
+            };
+            
+            log('step2-result', '💾 Gọi PatientDataManager.saveBatchResults()');
+            document.getElementById('upload-progress').style.width = '75%';
+            
+            const batchId = PatientDataManager.saveBatchResults('test_batch.csv', testData, stats);
+            
+            if (batchId) {
+                log('step2-result', `✅ Lưu thành công! Batch ID: ${batchId}`, 'success');
+            } else {
+                log('step2-result', '❌ Lỗi khi lưu dữ liệu!', 'error');
+            }
+            
+            document.getElementById('upload-progress').style.width = '100%';
+        }
+
+        function checkStorageAfter() {
+            clear('step3-result');
+            
+            const stats = PatientDataManager.getStatistics();
+            log('step3-result', `📊 Tổng Batch: ${stats.totalBatches}`);
+            log('step3-result', `👥 Tổng Bệnh Nhân: ${stats.totalPatients}`);
+            log('step3-result', `⬆️ Nguy Cơ Cao: ${stats.highRisk}`);
+            log('step3-result', `⬇️ Nguy Cơ Thấp: ${stats.lowRisk}`);
+            
+            const history = PatientDataManager.getBatchHistory();
+            const patients = PatientDataManager.getAllPatients();
+            
+            if (history.length > 0) {
+                log('step3-result', `\n📜 Batch gần nhất: ${history[0].filename}`);
+                log('step3-result', `   - ID: ${history[0].id || history[0].batchId}`);
+                log('step3-result', `   - Patients: ${history[0].totalPatients}`);
+                log('step3-result', `   - Upload: ${new Date(history[0].uploadDate).toLocaleString('vi-VN')}`);
+            }
+            
+            if (patients.length > 0) {
+                log('step3-result', `\n👤 Bệnh nhân đầu tiên:`);
+                log('step3-result', `   - ID: ${patients[0].patientId}`);
+                log('step3-result', `   - Age: ${patients[0].Age}`);
+                log('step3-result', `   - Risk: ${patients[0].label} (${(patients[0].risk_score * 100).toFixed(1)}%)`);
+                log('step3-result', `   - Batch: ${patients[0].batchId}`, 'success');
+            }
+        }
+
+        function clearStorage() {
+            if (confirm('⚠️ Xác nhận xóa tất cả dữ liệu?')) {
+                clear('step4-result');
+                localStorage.clear();
+                log('step4-result', '✅ Đã xóa tất cả dữ liệu từ localStorage', 'success');
+                log('step4-result', '🔄 Refresh page để xem thay đổi');
+            }
+        }
+
+        // ===== TAB 2: Status Check =====
+        function checkStatus() {
+            clear('status-result');
+            
+            if (typeof PatientDataManager === 'undefined') {
+                log('status-result', '❌ PatientDataManager is NOT defined!', 'error');
+                return;
+            }
+            log('status-result', '✅ PatientDataManager IS defined', 'success');
+
+            const history = localStorage.getItem('patient_history');
+            const patients = localStorage.getItem('all_patients');
+            
+            log('status-result', '\n=== localStorage Keys ===');
+            log('status-result', 'patient_history: ' + (history ? `✅ (${history.length} bytes)` : '❌ NOT found'));
+            log('status-result', 'all_patients: ' + (patients ? `✅ (${patients.length} bytes)` : '❌ NOT found'));
+
+            const stats = PatientDataManager.getStatistics();
+            log('status-result', '\n=== Statistics ===');
+            log('status-result', JSON.stringify(stats, null, 2), 'info');
+        }
+
+        function showStatistics() {
+            clear('status-result');
+            const stats = PatientDataManager.getStatistics();
+            const html = `
+<div class="stat"><div class="stat-label">Batches</div><div class="stat-value">${stats.totalBatches}</div></div>
+<div class="stat"><div class="stat-label">Patients</div><div class="stat-value">${stats.totalPatients}</div></div>
+<div class="stat"><div class="stat-label">High Risk</div><div class="stat-value">${stats.highRisk}</div></div>
+<div class="stat"><div class="stat-label">Low Risk</div><div class="stat-value">${stats.lowRisk}</div></div>
+<pre>${JSON.stringify(stats, null, 2)}</pre>
+            `;
+            document.getElementById('status-result').innerHTML = html;
+            document.getElementById('status-result').style.display = 'block';
+        }
+
+        function showAllPatients() {
+            clear('patients-result');
+            const patients = PatientDataManager.getAllPatients();
+            log('patients-result', `Total: ${patients.length} patients\n`);
+            log('patients-result', patients.length > 0 ? JSON.stringify(patients, null, 2) : 'No data', 'info');
+        }
+
+        function showHistory() {
+            clear('history-result');
+            const history = PatientDataManager.getBatchHistory();
+            log('history-result', `Total: ${history.length} batches\n`);
+            log('history-result', history.length > 0 ? JSON.stringify(history, null, 2) : 'No data', 'info');
+        }
+
+        // ===== TAB 3: Storage Inspector =====
+        function showRawStorage() {
+            clear('storage-result');
+            const raw = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                raw[key] = value.substring(0, 100) + (value.length > 100 ? '...' : '');
+            }
+            document.getElementById('storage-result').innerHTML = '<pre>' + JSON.stringify(raw, null, 2) + '</pre>';
+            document.getElementById('storage-result').style.display = 'block';
+        }
+
+        function showStorageSize() {
+            clear('storage-result');
+            let totalSize = 0;
+            const sizes = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const size = localStorage.getItem(key).length;
+                sizes[key] = size + ' bytes';
+                totalSize += size;
+            }
+            sizes['TOTAL'] = (totalSize / 1024).toFixed(2) + ' KB';
+            document.getElementById('storage-result').innerHTML = '<pre>' + JSON.stringify(sizes, null, 2) + '</pre>';
+            document.getElementById('storage-result').style.display = 'block';
+        }
+
+        function showPatientHistory() {
+            clear('history-raw');
+            const history = localStorage.getItem('patient_history');
+            const data = history ? JSON.parse(history) : null;
+            document.getElementById('history-raw').innerHTML = `<h4>patient_history (${data ? data.length : 0} batches)</h4><pre>${JSON.stringify(data, null, 2)}</pre>`;
+            document.getElementById('history-raw').style.display = 'block';
+        }
+
+        function showAllPatientsRaw() {
+            clear('patients-raw');
+            const patients = localStorage.getItem('all_patients');
+            const data = patients ? JSON.parse(patients) : null;
+            document.getElementById('patients-raw').innerHTML = `<h4>all_patients (${data ? data.length : 0} patients)</h4><pre>${JSON.stringify(data, null, 2)}</pre>`;
+            document.getElementById('patients-raw').style.display = 'block';
+        }
+
+        function clearAllStorage() {
+            if (confirm('⚠️ Clear all localStorage data?')) {
+                localStorage.clear();
+                alert('✅ Cleared');
+                clear('storage-result');
+                clear('history-raw');
+                clear('patients-raw');
+            }
+        }
+
+        // Auto-check on load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                checkCurrentStorage();
+                checkStatus();
+                showStatistics();
+            }, 200);
+        });
+    </script>
+</body>
+</html>

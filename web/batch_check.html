@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm Tra Hàng Loạt - Dự Đoán Bệnh Tim</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #c0392b; --primary-light: #e74c3c; --secondary: #fa709a; --success: #27ae60; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background: linear-gradient(135deg, #fef5f5 0%, #ffe8e8 100%); min-height: 100vh; padding: 20px; }
+        
+        nav { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); padding: 18px 80px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 12px 40px rgba(0,0,0,0.25); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(5px); }
+        .logo { display: flex; align-items: center; gap: 16px; color: white; font-size: 1.7em; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.3s ease; }
+        .logo:hover { transform: scale(1.05); filter: brightness(1.1); }
+        .logo-icon { width: 55px; height: 55px; background: rgba(255, 255, 255, 0.2); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; color: white; box-shadow: 0 6px 16px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.2); border: 2px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; }
+        .logo:hover .logo-icon { background: rgba(255, 255, 255, 0.3); border-color: rgba(255, 255, 255, 0.5); transform: rotate(5deg); }
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { color: white; text-decoration: none; font-size: 1.05em; font-weight: 600; padding: 10px 18px; border-radius: 10px; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.15); transition: all 0.3s ease; }
+        .nav-links a:hover { background: rgba(255,255,255,0.18); transform: translateY(-3px); border-color: rgba(255,255,255,0.3); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 40px; }
+        h1 { color: var(--primary); font-size: 2.8em; margin-bottom: 15px; }
+        .subtitle { color: #666; font-size: 1.1em; }
+        
+        .upload-section { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 30px; }
+        
+        .upload-area { border: 3px dashed var(--primary); border-radius: 12px; padding: 50px 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; background: #f9f9f9; }
+        .upload-area:hover { background: #f0f0f0; border-color: var(--primary-light); }
+        .upload-area.active { background: rgba(192, 57, 43, 0.05); border-color: var(--primary-light); }
+        
+        .upload-icon { font-size: 3em; margin-bottom: 15px; }
+        .upload-text { font-size: 1.2em; color: #333; margin-bottom: 10px; font-weight: 700; }
+        .upload-hint { color: #666; font-size: 0.95em; }
+        
+        #csvFile { display: none; }
+        
+        .template-section { background: #f5f5f5; padding: 25px; border-radius: 12px; margin-bottom: 25px; }
+        .template-title { font-size: 1.2em; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
+        .template-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn { padding: 12px 24px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(192, 57, 43, 0.3); }
+        .btn-secondary { background: white; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-secondary:hover { background: var(--primary); color: white; }
+        .btn-danger { background: white; color: #e74c3c; border: 2px solid #e74c3c; }
+        .btn-danger:hover { background: #e74c3c; color: white; }
+        
+        .progress-section { display: none; margin: 25px 0; }
+        .progress-bar { width: 100%; height: 8px; background: #e0e0e0; border-radius: 10px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%); width: 0%; transition: width 0.3s ease; }
+        .progress-text { margin-top: 10px; font-size: 0.95em; color: #666; }
+        
+        .results-section { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); margin-bottom: 30px; display: none; }
+        
+        .result-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 30px; }
+        .stat-card { background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%); padding: 25px 15px; border-radius: 10px; text-align: center; border-left: 4px solid var(--primary); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .stat-value { font-size: 2.2em; font-weight: 700; color: var(--primary); }
+        .stat-label { color: #666; margin-top: 8px; font-size: 0.95em; }
+        
+        .table-wrapper { overflow-x: auto; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; min-width: 1100px; }
+        thead { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; position: sticky; top: 0; z-index: 10; }
+        th, td { padding: 14px 12px; text-align: left; border-bottom: 1px solid #e0e0e0; font-size: 0.95em; }
+        th { font-weight: 700; white-space: nowrap; }
+        tr:hover { background: #f9f9f9; }
+        td:first-child, th:first-child { min-width: 40px; }
+        
+        .risk-badge { padding: 5px 12px; border-radius: 20px; font-weight: 700; font-size: 0.85em; display: inline-block; }
+        .risk-low { background: rgba(39, 174, 96, 0.2); color: #27ae60; }
+        .risk-high { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+        
+        .action-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        .warning { background: #fff3cd; border-left: 4px solid #f39c12; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; color: #856404; }
+        .success { background: #d4edda; border-left: 4px solid #27ae60; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; color: #155724; }
+        
+        .loading { display: none; text-align: center; padding: 30px; }
+        .spinner { display: inline-block; width: 40px; height: 40px; border: 4px solid #f0f0f0; border-top: 4px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        @media (max-width: 768px) {
+            nav { padding: 12px 20px; }
+            .container { padding: 20px 15px; }
+            .upload-area { padding: 30px 15px; }
+            h1 { font-size: 2em; }
+            .result-stats { grid-template-columns: 1fr; }
+            .action-buttons { flex-direction: column; }
+            .btn { width: 100%; }
+            
+            /* Make grid single column on mobile */
+            [style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="menu.html" class="logo">
+            <div class="logo-icon">❤️</div>
+            <span>Heart Care</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="menu.html">🏠 Trang Chủ</a></li>
+            <li><a href="train.html">🔮 Dự Đoán</a></li>
+            <li><a href="image_predict.html">🖼️ Hình Ảnh</a></li>
+            <li><a href="patients.html">👥 Bệnh Nhân</a></li>
+        </ul>
+    </nav>
+
+    <!-- Import Patient Data Manager -->
+    <script src="/static/js/patient-data.js"></script>
+
+    <div class="container">
+        <header>
+            <h1>📊 Kiểm Tra Hàng Loạt Bệnh Nhân</h1>
+            <p class="subtitle">Tải lên file CSV để dự đoán bệnh tim cho nhiều bệnh nhân cùng một lúc</p>
+        </header>
+
+        <div class="upload-section">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <!-- LEFT SIDE: Upload Area -->
+                <div>
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📁</div>
+                        <div class="upload-text">Kéo file CSV vào đây</div>
+                        <div class="upload-hint">hoặc click để chọn file (tối đa 50MB)</div>
+                        <input type="file" id="csvFile" accept=".csv">
+                    </div>
+
+                    <div id="fileSelectedSection" style="display: none; margin-top: 20px; padding: 20px; background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%); border-radius: 10px; border-left: 4px solid var(--primary);">
+                        <p style="margin-bottom: 12px; color: #333; font-weight: 700;">
+                            ✅ File được chọn: <span id="selectedFileName" style="color: var(--primary);"></span>
+                        </p>
+                        <p style="margin-bottom: 15px; color: #666; font-size: 0.95em;">
+                            Số dòng dữ liệu: <span id="rowCount" style="color: var(--primary); font-weight: 700;"></span>
+                        </p>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button class="btn btn-primary" onclick="submitCSV()">🚀 Gửi File CSV</button>
+                            <button class="btn btn-secondary" onclick="cancelFile()">❌ Chọn File Khác</button>
+                        </div>
+                    </div>
+
+                    <div class="progress-section" id="progressSection">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="progressText">Đang xử lý...</span>
+                        </div>
+                    </div>
+
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 15px; color: #666;">Đang xử lý dự đoán...</p>
+                    </div>
+
+                    <div class="template-buttons" style="margin-top: 20px;">
+                        <button class="btn btn-secondary" onclick="downloadTemplate()">📥 Template Rỗng</button>
+                        <button class="btn btn-secondary" onclick="downloadSampleData()">📊 Dữ Liệu Mẫu</button>
+                        <button class="btn btn-secondary" onclick="downloadFullData()">💾 Toàn Bộ Dữ Liệu</button>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: Information & Sample Data Table -->
+                <div>
+                    <!-- Information Table -->
+                    <div style="background: linear-gradient(135deg, rgba(192, 57, 43, 0.05) 0%, rgba(231, 76, 60, 0.05) 100%); padding: 20px; border-radius: 12px; border: 2px solid rgba(192, 57, 43, 0.15); margin-bottom: 20px;">
+                        <div style="font-size: 1.1em; font-weight: 700; color: var(--primary); margin-bottom: 15px;">📋 Thông Tin Cột Dữ Liệu (Bắt Buộc)</div>
+                        <div style="overflow-x: auto; max-height: 400px; overflow-y: auto;">
+                            <table style="width: 100%; font-size: 0.75em; border-collapse: collapse;">
+                                <thead style="position: sticky; top: 0;">
+                                    <tr style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white;">
+                                        <th style="padding: 8px; text-align: left; font-weight: 700; white-space: nowrap; width: 25%;">Tên Cột</th>
+                                        <th style="padding: 8px; text-align: left; font-weight: 700; white-space: nowrap; width: 20%;">Kiểu Dữ Liệu</th>
+                                        <th style="padding: 8px; text-align: left; font-weight: 700; white-space: nowrap; width: 20%;">Ví Dụ</th>
+                                        <th style="padding: 8px; text-align: left; font-weight: 700;">Mô Tả</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="infoTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Sample Data Preview -->
+                    <div style="background: linear-gradient(135deg, rgba(192, 57, 43, 0.08) 0%, rgba(231, 76, 60, 0.08) 100%); padding: 20px; border-radius: 12px; border: 2px solid rgba(192, 57, 43, 0.2);">
+                        <div style="font-size: 1.1em; font-weight: 700; color: var(--primary); margin-bottom: 15px;">👁️ Dữ Liệu Mẫu (5 dòng đầu)</div>
+                        <div style="overflow-x: auto; max-height: 300px; overflow-y: auto;">
+                            <table style="width: 100%; font-size: 0.75em; border-collapse: collapse;">
+                                <thead style="position: sticky; top: 0;">
+                                    <tr style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white;">
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">STT</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Tuổi</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Giới Tính</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Cân Nặng</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Chiều Cao</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">BMI</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Hút Thuốc</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Rượu</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Hoạt Động</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Ăn Uống</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Stress</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Huyết Áp</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Tiểu Đường</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Cholesterol</th>
+                                        <th style="padding: 8px 6px; text-align: center; font-weight: 700; white-space: nowrap;">Lịch Sử Tim</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sampleDataTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="errorMsg" class="warning" style="display: none;"></div>
+
+        <div class="results-section" id="resultsSection">
+            <h2 style="margin-bottom: 20px; color: var(--primary);">📈 Kết Quả Dự Đoán</h2>
+
+            <div class="result-stats" id="resultStats"></div>
+
+            <div class="table-wrapper">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tuổi</th>
+                            <th>Giới Tính</th>
+                            <th>BMI</th>
+                            <th>Huyết Áp</th>
+                            <th>Nhịp Tim</th>
+                            <th>Xác Suất Bệnh (%)</th>
+                            <th>Mức Nguy Cơ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody"></tbody>
+                </table>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="exportToCSV()">📥 Xuất CSV</button>
+                <button class="btn btn-primary" onclick="window.print()">🖨️ In Kết Quả</button>
+                <button class="btn btn-secondary" onclick="resetForm()">🔄 Tải Lại</button>
+                <button class="btn btn-danger" onclick="clearResults()">🗑️ Xóa Dữ Liệu</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const csvFile = document.getElementById('csvFile');
+        const resultsSection = document.getElementById('resultsSection');
+        const loading = document.getElementById('loading');
+        const errorMsg = document.getElementById('errorMsg');
+        const fileSelectedSection = document.getElementById('fileSelectedSection');
+        let currentCSVText = null;
+
+        // Load sample data on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadSampleDataPreview();
+            loadColumnInformation();
+        });
+
+        // Column information for the info table
+        const columnInfo = [
+            { name: 'Age', type: 'Số', example: '48', desc: 'Tuổi bệnh nhân (năm)' },
+            { name: 'Gender', type: 'Text', example: 'Male/Female', desc: 'Giới tính (Male hoặc Female)' },
+            { name: 'Weight', type: 'Số', example: '78', desc: 'Cân nặng (kg)' },
+            { name: 'Height', type: 'Số', example: '157', desc: 'Chiều cao (cm)' },
+            { name: 'BMI', type: 'Số', example: '26.4', desc: 'Chỉ số khối cơ thể' },
+            { name: 'Smoking', type: 'Text', example: 'Never', desc: 'Trạng thái hút thuốc' },
+            { name: 'Alcohol_Intake', type: 'Text', example: 'None', desc: 'Mức độ uống rượu' },
+            { name: 'Physical_Activity', type: 'Text', example: 'Sedentary', desc: 'Mức độ hoạt động thể chất' },
+            { name: 'Diet', type: 'Text', example: 'Healthy', desc: 'Chế độ ăn uống' },
+            { name: 'Stress_Level', type: 'Text', example: 'Medium', desc: 'Mức độ căng thẳng' },
+            { name: 'Hypertension', type: 'Binary', example: '0/1', desc: 'Cao huyết áp (0=No, 1=Yes)' },
+            { name: 'Diabetes', type: 'Binary', example: '0/1', desc: 'Tiểu đường (0=No, 1=Yes)' },
+            { name: 'Hyperlipidemia', type: 'Binary', example: '0/1', desc: 'Rối loạn lipid (0=No, 1=Yes)' },
+            { name: 'Family_History', type: 'Binary', example: '0/1', desc: 'Lịch sử gia đình (0=No, 1=Yes)' },
+            { name: 'Previous_Heart_Attack', type: 'Binary', example: '0/1', desc: 'Lịch sử nhồi máu (0=No, 1=Yes)' },
+            { name: 'Systolic_BP', type: 'Số', example: '104', desc: 'Huyết áp tâm thu (mmHg)' },
+            { name: 'Diastolic_BP', type: 'Số', example: '99', desc: 'Huyết áp tâm trương (mmHg)' },
+            { name: 'Heart_Rate', type: 'Số', example: '71', desc: 'Nhịp tim (lần/phút)' },
+            { name: 'Blood_Sugar_Fasting', type: 'Số', example: '165', desc: 'Glucose lúc đói (mg/dL)' },
+            { name: 'Cholesterol_Total', type: 'Số', example: '200', desc: 'Cholesterol toàn phần (mg/dL)' },
+            { name: 'Heart_Disease', type: 'Binary', example: '0/1', desc: 'Bệnh tim (0=No, 1=Yes) - Cột này có thể bỏ trống' }
+        ];
+
+        function loadColumnInformation() {
+            const tbody = document.getElementById('infoTable');
+            tbody.innerHTML = '';
+            
+            columnInfo.forEach((col, idx) => {
+                const row = document.createElement('tr');
+                row.style.cssText = 'border-bottom: 1px solid rgba(192, 57, 43, 0.1);';
+                row.onmouseover = () => row.style.background = 'rgba(192, 57, 43, 0.08)';
+                row.onmouseout = () => row.style.background = 'transparent';
+                
+                // Column name
+                const nameCell = document.createElement('td');
+                nameCell.style.cssText = 'padding: 8px; text-align: left; font-weight: 600; color: var(--primary);';
+                nameCell.textContent = col.name;
+                row.appendChild(nameCell);
+                
+                // Data type
+                const typeCell = document.createElement('td');
+                typeCell.style.cssText = 'padding: 8px; text-align: left; color: #666;';
+                typeCell.textContent = col.type;
+                row.appendChild(typeCell);
+                
+                // Example
+                const exampleCell = document.createElement('td');
+                exampleCell.style.cssText = 'padding: 8px; text-align: left; color: #333; font-family: monospace; background: rgba(192, 57, 43, 0.03);';
+                exampleCell.textContent = col.example;
+                row.appendChild(exampleCell);
+                
+                // Description
+                const descCell = document.createElement('td');
+                descCell.style.cssText = 'padding: 8px; text-align: left; color: #666; font-size: 0.9em;';
+                descCell.textContent = col.desc;
+                row.appendChild(descCell);
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        async function loadSampleDataPreview() {
+            try {
+                const response = await fetch('../data/synthetic_heart_disease_dataset.csv');
+                const csv = await response.text();
+                // Handle all line ending formats: \r\n, \n, or \r alone
+                const lines = csv.trim().split(/\r\n|\r|\n/).filter(line => line.trim().length > 0);
+                
+                const sampleLines = lines.slice(0, 6); // Header + 5 rows
+                const tbody = document.getElementById('sampleDataTable');
+                tbody.innerHTML = '';
+                
+                for (let i = 1; i < sampleLines.length; i++) {
+                    const values = sampleLines[i].trim().split(';').map(v => v.trim());
+                    // Accept rows with 20-21 columns
+                    if (values.length < 20) continue;
+                    
+                    const row = document.createElement('tr');
+                    row.style.cssText = 'border-bottom: 1px solid rgba(192, 57, 43, 0.1);';
+                    row.onmouseover = () => row.style.background = 'rgba(192, 57, 43, 0.08)';
+                    row.onmouseout = () => row.style.background = 'transparent';
+                    
+                    // STT
+                    const sttCell = document.createElement('td');
+                    sttCell.style.cssText = 'padding: 8px 6px; text-align: center; font-size: 0.85em;';
+                    sttCell.textContent = i;
+                    row.appendChild(sttCell);
+                    
+                    // Show first 14 columns (Age to Previous_Heart_Attack)
+                    const columnsToShow = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+                    columnsToShow.forEach(idx => {
+                        const cell = document.createElement('td');
+                        cell.style.cssText = 'padding: 8px 6px; text-align: center; font-size: 0.85em; white-space: nowrap;';
+                        cell.textContent = values[idx] || '';
+                        row.appendChild(cell);
+                    });
+                    
+                    tbody.appendChild(row);
+                }
+            } catch (error) {
+                console.error('Lỗi tải dữ liệu mẫu:', error);
+                const tbody = document.getElementById('sampleDataTable');
+                tbody.innerHTML = '<tr><td colspan="15" style="padding: 20px; text-align: center; color: #999;">Không thể tải dữ liệu mẫu</td></tr>';
+            }
+        }
+
+        // Drag and drop
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('active');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('active');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('active');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                csvFile.files = files;
+                handleFileSelection();
+            }
+        });
+
+        uploadArea.addEventListener('click', () => csvFile.click());
+
+        csvFile.addEventListener('change', handleFileSelection);
+
+        async function handleFileSelection() {
+            const file = csvFile.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                currentCSVText = e.target.result;
+                displayFileInfo(file, currentCSVText);
+            };
+            reader.readAsText(file);
+        }
+
+        function displayFileInfo(file, csvText) {
+            // Handle all line ending formats: \r\n, \n, or \r alone
+            const lines = csvText.trim().split(/\r\n|\r|\n/).filter(line => line.trim().length > 0);
+            
+            if (lines.length < 2) {
+                errorMsg.textContent = '❌ Lỗi: File CSV không hợp lệ không có dữ liệu!';
+                errorMsg.style.display = 'block';
+                fileSelectedSection.style.display = 'none';
+                return;
+            }
+            
+            // Detect delimiter: tab, semicolon, or comma (priority: tab > semicolon > comma)
+            const firstLine = lines[0].trim();
+            let delimiter = ','; // Default to comma
+            if (firstLine.includes('\t')) {
+                delimiter = '\t';
+            } else if (firstLine.includes(';')) {
+                delimiter = ';';
+            } else if (firstLine.includes(',')) {
+                delimiter = ',';
+            }
+            
+            // Count valid data rows (those with 20-21 columns to handle edge cases)
+            let validRows = 0;
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue; // Skip empty lines
+                const values = lines[i].trim().split(delimiter).map(v => v.trim());
+                // Accept rows with 20 or 21 columns (some might miss last empty column)
+                if (values.length >= 20 && values.length <= 21) {
+                    validRows++;
+                }
+            }
+            
+            if (validRows === 0) {
+                errorMsg.textContent = '❌ Lỗi: File CSV không hợp lệ không có dữ liệu!';
+                errorMsg.style.display = 'block';
+                fileSelectedSection.style.display = 'none';
+                return;
+            }
+            
+            document.getElementById('selectedFileName').textContent = file.name;
+            document.getElementById('rowCount').textContent = validRows.toLocaleString('vi-VN');
+            fileSelectedSection.style.display = 'block';
+            errorMsg.style.display = 'none';
+            
+            window.scrollTo({ top: fileSelectedSection.offsetTop - 100, behavior: 'smooth' });
+        }
+
+        function cancelFile() {
+            csvFile.value = '';
+            currentCSVText = null;
+            fileSelectedSection.style.display = 'none';
+            errorMsg.style.display = 'none';
+        }
+
+        async function submitCSV() {
+            if (!currentCSVText) {
+                alert('Vui lòng chọn file CSV!');
+                return;
+            }
+            await processBatch(currentCSVText);
+        }
+
+        async function processBatch(csvText) {
+            // Handle all line ending formats: \r\n, \n, or \r alone
+            const lines = csvText.trim().split(/\r\n|\r|\n/).filter(line => line.trim().length > 0);
+            const data = [];
+
+            // Detect delimiter: tab, semicolon, or comma (priority: tab > semicolon > comma)
+            const firstLine = lines[0].trim();
+            let delimiter = ','; // Default to comma
+            if (firstLine.includes('\t')) {
+                delimiter = '\t';
+            } else if (firstLine.includes(';')) {
+                delimiter = ';';
+            } else if (firstLine.includes(',')) {
+                delimiter = ',';
+            }
+
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue; // Skip empty lines
+                const values = lines[i].trim().split(delimiter).map(v => v.trim());
+                // Accept rows with 20-21 columns (handle edge cases)
+                if (values.length < 20 || values.length > 21) continue;
+
+                data.push({
+                    Age: parseInt(values[0]),
+                    Gender: values[1],
+                    Weight: parseFloat(values[2]),
+                    Height: parseFloat(values[3]),
+                    BMI: parseFloat(values[4]),
+                    Smoking: values[5],
+                    Alcohol_Intake: values[6],
+                    Physical_Activity: values[7],
+                    Diet: values[8],
+                    Stress_Level: values[9],
+                    Hypertension: parseInt(values[10]),
+                    Diabetes: parseInt(values[11]),
+                    Hyperlipidemia: parseInt(values[12]),
+                    Family_History: parseInt(values[13]),
+                    Previous_Heart_Attack: parseInt(values[14]),
+                    Systolic_BP: parseInt(values[15]),
+                    Diastolic_BP: parseInt(values[16]),
+                    Heart_Rate: parseInt(values[17]),
+                    Blood_Sugar_Fasting: parseInt(values[18]),
+                    Cholesterol_Total: parseInt(values[19])
+                });
+            }
+
+            if (data.length === 0) {
+                errorMsg.textContent = '❌ Lỗi: File CSV không hợp lệ hoặc không có dữ liệu!';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            fileSelectedSection.style.display = 'none';
+            loading.style.display = 'block';
+            errorMsg.style.display = 'none';
+
+            try {
+                const response = await fetch('http://127.0.0.1:3000/predict/batch', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ data: data })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+                }
+
+                const results = await response.json();
+                displayResults(results.results);
+                loading.style.display = 'none';
+            } catch (error) {
+                errorMsg.textContent = '❌ Lỗi: ' + error.message;
+                errorMsg.style.display = 'block';
+                loading.style.display = 'none';
+                console.error('Fetch error:', error);
+            }
+        }
+
+        function displayResults(results) {
+            const tbody = document.getElementById('resultsBody');
+            const statsDiv = document.getElementById('resultStats');
+            
+            tbody.innerHTML = '';
+            let totalHigh = 0;
+            let totalLow = 0;
+            
+            // Transform results for display and storage
+            const enhancedResults = [];
+
+            results.forEach((result, idx) => {
+                const riskScore = result.risk_probability || 0;
+                const riskLevel = riskScore > 0.5 ? 'high' : 'low';
+                const riskText = riskLevel === 'high' ? '⬆️ Cao' : '⬇️ Thấp';
+                
+                if (riskLevel === 'high') totalHigh++;
+                else totalLow++;
+
+                // Convert API response (lowercase) to PascalCase for storage
+                const enhancedResult = {
+                    Age: result.age,
+                    Gender: result.gender,
+                    Weight: result.weight,
+                    Height: result.height,
+                    BMI: result.bmi,
+                    Smoking: result.smoking,
+                    Alcohol_Intake: result.alcohol_intake,
+                    Physical_Activity: result.physical_activity,
+                    Diet: result.diet,
+                    Stress_Level: result.stress_level,
+                    Hypertension: result.hypertension,
+                    Diabetes: result.diabetes,
+                    Hyperlipidemia: result.hyperlipidemia,
+                    Family_History: result.family_history,
+                    Previous_Heart_Attack: result.previous_heart_attack,
+                    Systolic_BP: result.systolic_bp,
+                    Diastolic_BP: result.diastolic_bp,
+                    Heart_Rate: result.heart_rate,
+                    Blood_Sugar_Fasting: result.blood_sugar_fasting,
+                    Cholesterol_Total: result.cholesterol_total,
+                    label: riskLevel === 'high' ? 'Cao' : 'Thấp',
+                    risk_score: riskScore,
+                    prediction_date: new Date().toISOString()
+                };
+                
+                enhancedResults.push(enhancedResult);
+
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${idx + 1}</td>
+                    <td>${result.age}</td>
+                    <td>${result.gender}</td>
+                    <td>${result.bmi?.toFixed(1)}</td>
+                    <td>${result.systolic_bp}/${result.diastolic_bp}</td>
+                    <td>${result.heart_rate}</td>
+                    <td>${(riskScore * 100).toFixed(1)}</td>
+                    <td><span class="risk-badge risk-${riskLevel}">${riskText}</span></td>
+                `;
+            });
+
+            // Save to localStorage
+            const filename = document.getElementById('selectedFileName').textContent || 'batch_' + Date.now() + '.csv';
+            const stats = {
+                totalHigh: totalHigh,
+                totalLow: totalLow,
+                timestamp: new Date().toISOString()
+            };
+            
+            console.log('📊 Saving batch results:', {
+                filename: filename,
+                totalPatients: enhancedResults.length,
+                stats: stats,
+                firstPatient: enhancedResults[0]
+            });
+            
+            // Wait for PatientDataManager to be available
+            if (typeof PatientDataManager === 'undefined') {
+                console.error('❌ PatientDataManager not available!');
+                alert('❌ Lỗi: Không thể lưu dữ liệu. Vui lòng reload trang.');
+                return;
+            }
+            
+            const batchId = PatientDataManager.saveBatchResults(filename, enhancedResults, stats);
+            console.log('✅ Batch saved with ID:', batchId);
+            
+            // Broadcast data update to other tabs
+            try {
+                const channel = new BroadcastChannel('patient_data_updates');
+                channel.postMessage({
+                    type: 'data-updated',
+                    timestamp: new Date().toISOString(),
+                    batchId: batchId,
+                    totalPatients: results.length,
+                    totalHigh: totalHigh,
+                    totalLow: totalLow
+                });
+                console.log('📡 Broadcasted data update to other tabs');
+                channel.close();
+            } catch (error) {
+                console.warn('⚠️ BroadcastChannel not available:', error);
+            }
+            
+            // Show success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'success';
+            successMsg.innerHTML = `✅ Đã lưu ${results.length} bệnh nhân vào hệ thống. <a href="patients.html" style="color: #155724; font-weight: 700; text-decoration: underline;">Xem danh sách bệnh nhân →</a>`;
+            resultsSection.insertAdjacentElement('afterbegin', successMsg);
+
+            statsDiv.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-value">${results.length}</div>
+                    <div class="stat-label">Tổng Bệnh Nhân</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${totalHigh}</div>
+                    <div class="stat-label">Nguy Cơ Cao</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${totalLow}</div>
+                    <div class="stat-label">Nguy Cơ Thấp</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${((totalHigh / results.length) * 100).toFixed(1)}%</div>
+                    <div class="stat-label">Tỷ Lệ Cao</div>
+                </div>
+            `;
+
+            resultsSection.style.display = 'block';
+            window.scrollTo({ top: resultsSection.offsetTop, behavior: 'smooth' });
+        }
+
+        function exportToCSV() {
+            const table = document.getElementById('resultsTable');
+            const csv = [];
+            table.querySelectorAll('tr').forEach(row => {
+                const data = [];
+                row.querySelectorAll('th, td').forEach(cell => data.push('"' + cell.textContent.trim() + '"'));
+                csv.push(data.join(','));
+            });
+            const blob = new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'batch_results_' + new Date().toISOString().slice(0,10) + '.csv';
+            link.click();
+        }
+
+        function resetForm() {
+            csvFile.value = '';
+            currentCSVText = null;
+            resultsSection.style.display = 'none';
+            fileSelectedSection.style.display = 'none';
+            errorMsg.style.display = 'none';
+        }
+
+        function clearResults() {
+            if (confirm('⚠️ Xác nhận xóa tất cả dữ liệu bệnh nhân đã lưu? Hành động này không thể hoàn tác!')) {
+                if (PatientDataManager.clearAllData()) {
+                    alert('✅ Đã xóa tất cả dữ liệu');
+                    resetForm();
+                }
+            }
+        }
+
+        function downloadTemplate() {
+            const headers = 'Age,Gender,Weight,Height,BMI,Smoking,Alcohol_Intake,Physical_Activity,Diet,Stress_Level,Hypertension,Diabetes,Hyperlipidemia,Family_History,Previous_Heart_Attack,Systolic_BP,Diastolic_BP,Heart_Rate,Blood_Sugar_Fasting,Cholesterol_Total,Heart_Disease';
+            downloadCSV(headers, 'template.csv');
+        }
+
+        async function downloadSampleData() {
+            try {
+                const response = await fetch('../data/synthetic_heart_disease_dataset.csv');
+                const csv = await response.text();
+                const lines = csv.split('\n').slice(0, 6).join('\n');
+                downloadCSV(lines, 'sample_data.csv');
+            } catch (error) {
+                alert('Lỗi tải dữ liệu mẫu');
+            }
+        }
+
+        async function downloadFullData() {
+            try {
+                const response = await fetch('../data/synthetic_heart_disease_dataset.csv');
+                const csv = await response.text();
+                downloadCSV(csv, 'full_data.csv');
+            } catch (error) {
+                alert('Lỗi tải dữ liệu');
+            }
+        }
+
+        function downloadCSV(content, filename) {
+            const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+        }
+    </script>
+</body>
+</html>

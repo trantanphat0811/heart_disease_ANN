@@ -1,0 +1,7002 @@
+[
+  {
+    "filename": "data/medical_images/train/disease/image_0000.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0001.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0002.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0003.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0004.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0005.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0006.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0007.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0008.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0009.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0010.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0011.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0012.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0013.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0014.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0015.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0016.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0017.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0018.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0019.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0020.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0021.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0022.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0023.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0024.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0025.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0026.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0027.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0028.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0029.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0030.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0031.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0032.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0033.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0034.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0035.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0036.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0037.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0038.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0039.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0040.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0041.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0042.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0043.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0044.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0045.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0046.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0047.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0048.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0049.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0050.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0051.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0052.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0053.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0054.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0055.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0056.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0057.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0058.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0059.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0060.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0061.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0062.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0063.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0064.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0065.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0066.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0067.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0068.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0069.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0070.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0071.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0072.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0073.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0074.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0075.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0076.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0077.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0078.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0079.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0080.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0081.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0082.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0083.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0084.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0085.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0086.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0087.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0088.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0089.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0090.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0091.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0092.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0093.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0094.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0095.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0096.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0097.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0098.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0099.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0100.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0101.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0102.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0103.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0104.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0105.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0106.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0107.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0108.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0109.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0110.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0111.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0112.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0113.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0114.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0115.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0116.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0117.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0118.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0119.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0120.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0121.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0122.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0123.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0124.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0125.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0126.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0127.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0128.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0129.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0130.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0131.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0132.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0133.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0134.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0135.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0136.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0137.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0138.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0139.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0140.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0141.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0142.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0143.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0144.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0145.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0146.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0147.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0148.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0149.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0150.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0151.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0152.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0153.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0154.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0155.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0156.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0157.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0158.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0159.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0160.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0161.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0162.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0163.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0164.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0165.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0166.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0167.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0168.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0169.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0170.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0171.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0172.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0173.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0174.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0175.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0176.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0177.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0178.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0179.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0180.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0181.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0182.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0183.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0184.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0185.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0186.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0187.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0188.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0189.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0190.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0191.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0192.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0193.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0194.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0195.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0196.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0197.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0198.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0199.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0200.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0201.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0202.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0203.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0204.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0205.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0206.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0207.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0208.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0209.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0210.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0211.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0212.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0213.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0214.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0215.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0216.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0217.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0218.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0219.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0220.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0221.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0222.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0223.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0224.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0225.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0226.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0227.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0228.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0229.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0230.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0231.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0232.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0233.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0234.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0235.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0236.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0237.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0238.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0239.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0240.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0241.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0242.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0243.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0244.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0245.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0246.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0247.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0248.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0249.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0250.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0251.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0252.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0253.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0254.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0255.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0256.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0257.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0258.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0259.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0260.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0261.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0262.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0263.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0264.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0265.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0266.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0267.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0268.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0269.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0270.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0271.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0272.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0273.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0274.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0275.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0276.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0277.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0278.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0279.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0280.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0281.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0282.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0283.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0284.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0285.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0286.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0287.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0288.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0289.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0290.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0291.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0292.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0293.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0294.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0295.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0296.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0297.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0298.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0299.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0300.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0301.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0302.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0303.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0304.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0305.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0306.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0307.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0308.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0309.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0310.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0311.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0312.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0313.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0314.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0315.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0316.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0317.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0318.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0319.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0320.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0321.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0322.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0323.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0324.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0325.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0326.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0327.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0328.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0329.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0330.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0331.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0332.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0333.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0334.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0335.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0336.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0337.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0338.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0339.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0340.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0341.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0342.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0343.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0344.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0345.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0346.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0347.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0348.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0349.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0350.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0351.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0352.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0353.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0354.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0355.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0356.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0357.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0358.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0359.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0360.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0361.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0362.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0363.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0364.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0365.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0366.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0367.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0368.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0369.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0370.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0371.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0372.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0373.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0374.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0375.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0376.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0377.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0378.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0379.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0380.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0381.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0382.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0383.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0384.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0385.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0386.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0387.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0388.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0389.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0390.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0391.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0392.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0393.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0394.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0395.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0396.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0397.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0398.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0399.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0400.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0401.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0402.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0403.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0404.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0405.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0406.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0407.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0408.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0409.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0410.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0411.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0412.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0413.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0414.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0415.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0416.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0417.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0418.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0419.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0420.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0421.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0422.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0423.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0424.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0425.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0426.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0427.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0428.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0429.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0430.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0431.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0432.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0433.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0434.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0435.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0436.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0437.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0438.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0439.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0440.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0441.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0442.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0443.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0444.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0445.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0446.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0447.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0448.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0449.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0450.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0451.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0452.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0453.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0454.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0455.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0456.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0457.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0458.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0459.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0460.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0461.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0462.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0463.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0464.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0465.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0466.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0467.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0468.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0469.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0470.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0471.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0472.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0473.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0474.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0475.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0476.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0477.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0478.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0479.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0480.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0481.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0482.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0483.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0484.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0485.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0486.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0487.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0488.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0489.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0490.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0491.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0492.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0493.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0494.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0495.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0496.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0497.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0498.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0499.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0500.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0501.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0502.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0503.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0504.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0505.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0506.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0507.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0508.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0509.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0510.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0511.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0512.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0513.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0514.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0515.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0516.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0517.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0518.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0519.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0520.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0521.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0522.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0523.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0524.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0525.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0526.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0527.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0528.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0529.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0530.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0531.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0532.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0533.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0534.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0535.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0536.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0537.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0538.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0539.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0540.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0541.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0542.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0543.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0544.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0545.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0546.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0547.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0548.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0549.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0550.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0551.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0552.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0553.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0554.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0555.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0556.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0557.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0558.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0559.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0560.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0561.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0562.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0563.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0564.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0565.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0566.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0567.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0568.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0569.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0570.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0571.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0572.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0573.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0574.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0575.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0576.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0577.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0578.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0579.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0580.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0581.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0582.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0583.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0584.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0585.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0586.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0587.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0588.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0589.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0590.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0591.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0592.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0593.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0594.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0595.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0596.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0597.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0598.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0599.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0600.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0601.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0602.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0603.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0604.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0605.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0606.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0607.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0608.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0609.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0610.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0611.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0612.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0613.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0614.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0615.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0616.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0617.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0618.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0619.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0620.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0621.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0622.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0623.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0624.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0625.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0626.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0627.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0628.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0629.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0630.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0631.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0632.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0633.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0634.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0635.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0636.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0637.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0638.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0639.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0640.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0641.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0642.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0643.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0644.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0645.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0646.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0647.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0648.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0649.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0650.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0651.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0652.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0653.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0654.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0655.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0656.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0657.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0658.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0659.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0660.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0661.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0662.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0663.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0664.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0665.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0666.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0667.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0668.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0669.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0670.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0671.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0672.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0673.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0674.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0675.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0676.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0677.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0678.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0679.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0680.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0681.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0682.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0683.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0684.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0685.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0686.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0687.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0688.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0689.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0690.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0691.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0692.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0693.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0694.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0695.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0696.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0697.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/disease/image_0698.png",
+    "split": "train",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/train/normal/image_0699.png",
+    "split": "train",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0700.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0701.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0702.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0703.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0704.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0705.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0706.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0707.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0708.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0709.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0710.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0711.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0712.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0713.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0714.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0715.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0716.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0717.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0718.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0719.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0720.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0721.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0722.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0723.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0724.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0725.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0726.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0727.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0728.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0729.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0730.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0731.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0732.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0733.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0734.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0735.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0736.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0737.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0738.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0739.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0740.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0741.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0742.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0743.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0744.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0745.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0746.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0747.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0748.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0749.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0750.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0751.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0752.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0753.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0754.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0755.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0756.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0757.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0758.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0759.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0760.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0761.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0762.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0763.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0764.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0765.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0766.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0767.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0768.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0769.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0770.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0771.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0772.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0773.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0774.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0775.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0776.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0777.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0778.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0779.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0780.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0781.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0782.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0783.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0784.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0785.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0786.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0787.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0788.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0789.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0790.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0791.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0792.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0793.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0794.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0795.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0796.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0797.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0798.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0799.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0800.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0801.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0802.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0803.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0804.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0805.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0806.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0807.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0808.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0809.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0810.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0811.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0812.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0813.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0814.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0815.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0816.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0817.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0818.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0819.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0820.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0821.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0822.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0823.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0824.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0825.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0826.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0827.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0828.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0829.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0830.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0831.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0832.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0833.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0834.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0835.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0836.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0837.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0838.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0839.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0840.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0841.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0842.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0843.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0844.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0845.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0846.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0847.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/val/disease/image_0848.png",
+    "split": "val",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/val/normal/image_0849.png",
+    "split": "val",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0850.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0851.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0852.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0853.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0854.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0855.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0856.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0857.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0858.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0859.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0860.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0861.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0862.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0863.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0864.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0865.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0866.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0867.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0868.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0869.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0870.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0871.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0872.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0873.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0874.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0875.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0876.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0877.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0878.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0879.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0880.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0881.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0882.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0883.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0884.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0885.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0886.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0887.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0888.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0889.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0890.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0891.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0892.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0893.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0894.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0895.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0896.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0897.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0898.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0899.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0900.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0901.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0902.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0903.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0904.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0905.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0906.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0907.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0908.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0909.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0910.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0911.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0912.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0913.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0914.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0915.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0916.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0917.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0918.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0919.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0920.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0921.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0922.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0923.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0924.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0925.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0926.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0927.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0928.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0929.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0930.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0931.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0932.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0933.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0934.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0935.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0936.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0937.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0938.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0939.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0940.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0941.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0942.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0943.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0944.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0945.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0946.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0947.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0948.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0949.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0950.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0951.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0952.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0953.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0954.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0955.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0956.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0957.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0958.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0959.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0960.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0961.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0962.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0963.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0964.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0965.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0966.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0967.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0968.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0969.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0970.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0971.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0972.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0973.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0974.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0975.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0976.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0977.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0978.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0979.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0980.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0981.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0982.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0983.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0984.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0985.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0986.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0987.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0988.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0989.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0990.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0991.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0992.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0993.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0994.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0995.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0996.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "xray"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0997.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/disease/image_0998.png",
+    "split": "test",
+    "label": 1,
+    "disease": true,
+    "image_type": "ecg"
+  },
+  {
+    "filename": "data/medical_images/test/normal/image_0999.png",
+    "split": "test",
+    "label": 0,
+    "disease": false,
+    "image_type": "ecg"
+  }
+]
