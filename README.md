@@ -400,12 +400,6 @@ See [MONITORING_CI_CD.md](MONITORING_CI_CD.md#troubleshooting) for more.
 
 ---
 
-## �� License
-
-MIT License - See LICENSE file for details
-
----
-
 ## 🎓 Citation
 
 ```bibtex
@@ -416,17 +410,6 @@ MIT License - See LICENSE file for details
   url={https://github.com/yourusername/heart_disease}
 }
 ```
-
----
-
-## 📞 Support
-
-- 📖 **Docs**: See links above
-- 🐛 **Issues**: GitHub issues
-- 💬 **Discussions**: GitHub discussions
-- 📧 **Email**: your.email@example.com
-
----
 
 **Last Updated**: November 16, 2025  
 **Version**: 1.0.0  
