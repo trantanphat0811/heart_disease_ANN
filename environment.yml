@@ -1,8 +1,0 @@
-name: project-a-env
-channels:
-  - defaults
-dependencies:
-  - python=3.8
-  - numpy
-  - pandas
-  - scipy
